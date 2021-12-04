@@ -80,6 +80,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>

@@ -89,19 +89,79 @@ CMakeFiles/Proj_de_AED.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\main.cpp" -o CMakeFiles\Proj_de_AED.dir\main.cpp.s
 
+CMakeFiles/Proj_de_AED.dir/Airplane.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
+CMakeFiles/Proj_de_AED.dir/Airplane.cpp.obj: ../Airplane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Proj_de_AED.dir/Airplane.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\Airplane.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Airplane.cpp"
+
+CMakeFiles/Proj_de_AED.dir/Airplane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Airplane.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Airplane.cpp" > CMakeFiles\Proj_de_AED.dir\Airplane.cpp.i
+
+CMakeFiles/Proj_de_AED.dir/Airplane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Airplane.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Airplane.cpp" -o CMakeFiles\Proj_de_AED.dir\Airplane.cpp.s
+
+CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
+CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj: ../Flight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\Flight.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Flight.cpp"
+
+CMakeFiles/Proj_de_AED.dir/Flight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Flight.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Flight.cpp" > CMakeFiles\Proj_de_AED.dir\Flight.cpp.i
+
+CMakeFiles/Proj_de_AED.dir/Flight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Flight.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Flight.cpp" -o CMakeFiles\Proj_de_AED.dir\Flight.cpp.s
+
+CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
+CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj: ../Maintenance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\Maintenance.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Maintenance.cpp"
+
+CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Maintenance.cpp" > CMakeFiles\Proj_de_AED.dir\Maintenance.cpp.i
+
+CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Maintenance.cpp" -o CMakeFiles\Proj_de_AED.dir\Maintenance.cpp.s
+
+CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
+CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj: ../Passenger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\Passenger.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Passenger.cpp"
+
+CMakeFiles/Proj_de_AED.dir/Passenger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Passenger.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Passenger.cpp" > CMakeFiles\Proj_de_AED.dir\Passenger.cpp.i
+
+CMakeFiles/Proj_de_AED.dir/Passenger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Passenger.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Passenger.cpp" -o CMakeFiles\Proj_de_AED.dir\Passenger.cpp.s
+
 # Object files for target Proj_de_AED
 Proj_de_AED_OBJECTS = \
-"CMakeFiles/Proj_de_AED.dir/main.cpp.obj"
+"CMakeFiles/Proj_de_AED.dir/main.cpp.obj" \
+"CMakeFiles/Proj_de_AED.dir/Airplane.cpp.obj" \
+"CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj" \
+"CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj" \
+"CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj"
 
 # External object files for target Proj_de_AED
 Proj_de_AED_EXTERNAL_OBJECTS =
 
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/main.cpp.obj
+Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Airplane.cpp.obj
+Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj
+Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj
+Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/build.make
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/linklibs.rsp
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/objects1.rsp
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Proj_de_AED.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Proj_de_AED.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Proj_de_AED.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
