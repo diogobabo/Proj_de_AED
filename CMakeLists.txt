@@ -3,4 +3,4 @@ project(Proj_de_AED)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Proj_de_AED main.cpp Airplane.cpp Airplane.h Flight.cpp Flight.h Maintenance.cpp Maintenance.h Passenger.cpp Passenger.h)
+add_executable(Proj_de_AED main.cpp Airplane.cpp Airplane.h Flight.cpp Flight.h Maintenance.cpp Maintenance.h Passenger.cpp Passenger.h AirplaneCompany.cpp AirplaneCompany.h)

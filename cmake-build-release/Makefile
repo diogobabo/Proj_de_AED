@@ -169,6 +169,33 @@ Airplane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Airplane.cpp.s
 .PHONY : Airplane.cpp.s
 
+AirplaneCompany.obj: AirplaneCompany.cpp.obj
+
+.PHONY : AirplaneCompany.obj
+
+# target to build an object file
+AirplaneCompany.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/AirplaneCompany.cpp.obj
+.PHONY : AirplaneCompany.cpp.obj
+
+AirplaneCompany.i: AirplaneCompany.cpp.i
+
+.PHONY : AirplaneCompany.i
+
+# target to preprocess a source file
+AirplaneCompany.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/AirplaneCompany.cpp.i
+.PHONY : AirplaneCompany.cpp.i
+
+AirplaneCompany.s: AirplaneCompany.cpp.s
+
+.PHONY : AirplaneCompany.s
+
+# target to generate assembly for a file
+AirplaneCompany.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/AirplaneCompany.cpp.s
+.PHONY : AirplaneCompany.cpp.s
+
 Flight.obj: Flight.cpp.obj
 
 .PHONY : Flight.obj
@@ -289,6 +316,9 @@ help:
 	@echo ... Airplane.obj
 	@echo ... Airplane.i
 	@echo ... Airplane.s
+	@echo ... AirplaneCompany.obj
+	@echo ... AirplaneCompany.i
+	@echo ... AirplaneCompany.s
 	@echo ... Flight.obj
 	@echo ... Flight.i
 	@echo ... Flight.s

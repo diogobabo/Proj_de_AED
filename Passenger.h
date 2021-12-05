@@ -11,6 +11,8 @@
 class Passenger {
 private:
     std::string name;
+public:
+    Passenger(std::string name);
 };
 
 

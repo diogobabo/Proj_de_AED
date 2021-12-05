@@ -19,6 +19,17 @@ private:
     std::queue<Maintenance> maintenanceToBeDone;
     std::list<Maintenance> maintenanceToDone;
 public:
+    Airplane(std::string plate);
+    std::string getPlate();
+    int getSeats();
+    Flight getNextFlight();
+    void addFligth(Flight flight);
+    void addMaintenance(Maintenance maintenance);
+    std::list<Maintenance> getMaintenance();
+    std::list<Flight> getFlights();
+    Flight getLastFlights();
+
+
 
 };
 

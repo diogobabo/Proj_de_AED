@@ -11,9 +11,13 @@
 class Maintenance {
 private:
     std::string Type;
-    std::string Date;//format dd/mm/yyyy
+    std::string Date;//format yyyy:mm:dd
     std::string Employee;
     bool Done;//if maintenance is done , Done = true else done = false
+public:
+    Maintenance(std::string Type,std::string Date);
+    bool setMaintenaceDone(std::string Employee);
+    bool isDone();
 };
 
 
