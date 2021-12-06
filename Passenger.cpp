@@ -3,3 +3,12 @@
 //
 
 #include "Passenger.h"
+
+
+void Passenger::setName(std::string name) {
+    this->name=name;
+}
+
+std::string Passenger::getName() {
+    return name;
+}

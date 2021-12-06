@@ -23,7 +23,7 @@ public:
     std::string getDuration();
     std::string getOrigin();
     std::string getStartDate();
-    std::string getdestiny();
+    std::string getDestiny();
 
 
 
