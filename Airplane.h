@@ -5,9 +5,9 @@
 #ifndef PROJ_DE_AED_AIRPLANE_H
 #define PROJ_DE_AED_AIRPLANE_H
 
-#import <string>
-#import <list>
-#import <queue>
+#include <string>
+#include <list>
+#include <queue>
 #include "Flight.h"
 #include "Maintenance.h"
 
