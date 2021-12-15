@@ -8,7 +8,11 @@
 
 class Interface {
 private:
+    enum EntryType {AIRPLANECOMPANY, NEWCLIENT, TIMETABLESPUBLIC, ADMIN};
+    EntryType TYPE;
     void login();
+    int menuCall();
+    bool isNumber(const std::string &s) const;
 public:
     void iniciate();
 };
