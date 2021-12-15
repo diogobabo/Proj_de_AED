@@ -9,7 +9,7 @@
 #ifdef _WIN32
 #define CLEAR "cls"
 #else
-#define CLEAR "cls"
+#define CLEAR "clear"
 #endif
 
 bool Interface::isNumber(const std::string &s) const            //verifies if the string contains only numbers
