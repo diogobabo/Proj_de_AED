@@ -98,6 +98,12 @@
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>

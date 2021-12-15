@@ -223,6 +223,33 @@ Flight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Flight.cpp.s
 .PHONY : Flight.cpp.s
 
+Interface.obj: Interface.cpp.obj
+
+.PHONY : Interface.obj
+
+# target to build an object file
+Interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj
+.PHONY : Interface.cpp.obj
+
+Interface.i: Interface.cpp.i
+
+.PHONY : Interface.i
+
+# target to preprocess a source file
+Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Interface.cpp.i
+.PHONY : Interface.cpp.i
+
+Interface.s: Interface.cpp.s
+
+.PHONY : Interface.s
+
+# target to generate assembly for a file
+Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Interface.cpp.s
+.PHONY : Interface.cpp.s
+
 Maintenance.obj: Maintenance.cpp.obj
 
 .PHONY : Maintenance.obj
@@ -322,6 +349,9 @@ help:
 	@echo ... Flight.obj
 	@echo ... Flight.i
 	@echo ... Flight.s
+	@echo ... Interface.obj
+	@echo ... Interface.i
+	@echo ... Interface.s
 	@echo ... Maintenance.obj
 	@echo ... Maintenance.i
 	@echo ... Maintenance.s

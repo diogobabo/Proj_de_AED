@@ -7,11 +7,20 @@
 
 
 #include <vector>
+#include <fstream>
 #include "Airplane.h"
+#include "Passenger.h"
 
 class AirplaneCompany {
 private:
     std::vector<Airplane> planes;
+    std::vector<Passenger> clients;
+    std::fstream aiplanesfile;
+    std::fstream clientsfile;
+public:
+    AirplaneCompany(std::fstream aiplanesfile,std::fstream clientsfile);
+    AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
+
 
 };
 
