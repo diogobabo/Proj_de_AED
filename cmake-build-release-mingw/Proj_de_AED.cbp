@@ -92,6 +92,12 @@
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
@@ -114,6 +120,21 @@
 			<Option target="Proj_de_AED"/>
 		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp">

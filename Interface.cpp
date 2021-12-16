@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "Interface.h"
+#include "AirplaneCompany.h"
 
 #ifdef _WIN32
 #define CLEAR "cls"
@@ -90,6 +91,30 @@ void Interface::iniciate() {
 }
 
 void Interface::login() {
+
+    if(TYPE == AIRPLANECOMPANY){
+        loginAsCompany();
+    }
+    else if(TYPE == NEWCLIENT){
+
+    }
+    else if(TYPE == TIMETABLESPUBLIC){
+
+    }
+    else if(TYPE == ADMIN){
+
+    }
+
+}
+void Interface::loginAsCompany(){
+    try{
+        AirplaneCompany company("airplanes.txt","clientes.txt");
+    }catch(...){
+        std::cout << "DATA FILES MISSING" << std::endl;
+        system("pause");
+        exit(EXIT_FAILURE);
+    }
+
 
 }
 

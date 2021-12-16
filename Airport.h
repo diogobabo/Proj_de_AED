@@ -11,10 +11,11 @@
 class Airport{
 private:
     std::string name;
-    BST<Transport> transports;
+    BST<Transport> transports = BST<Transport>(Transport("0",0,"0"));
 
 public:
     Airport(std::string name);
+
     std::string getName();
     void setName(std::string name);
     BST<Transport> getTransports();

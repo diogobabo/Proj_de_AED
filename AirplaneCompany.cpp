@@ -3,3 +3,16 @@
 //
 
 #include "AirplaneCompany.h"
+
+AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string clientsfileTXT):aiplanesfile(),clientsfile() {
+    aiplanesfile.open(aiplanesfileTXT);
+    clientsfile.open(clientsfileTXT);
+    if(!aiplanesfile.is_open()){
+        throw "aiplanesfileTXT";
+    }
+    if(!clientsfile.is_open()){
+        throw "clientsfileTXT";
+    }
+    aiplanesfile.close();
+    clientsfile.close();
+}

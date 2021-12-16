@@ -1,4 +1,4 @@
-/
+//
 // Created by Diogo Babo on 04/12/2021.
 //
 
@@ -13,6 +13,7 @@ private:
     std::string name;
 public:
     Passenger(std::string name);
+    Passenger();
     void setName(std::string name);
     std::string getName();
 };

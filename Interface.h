@@ -14,6 +14,7 @@ private:
     int menuCall();
     bool isNumber(const std::string &s) const;
     void povoarVoos();
+    void loginAsCompany();
 public:
     void iniciate();
 };

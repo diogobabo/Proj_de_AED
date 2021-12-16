@@ -13,6 +13,7 @@ private:
     std::string time;
 public:
     Transport(std::string type, int distance, std::string time);
+    Transport();
     std::string getType();
     void setType(std::string type);
     void setDistance(int distance);
