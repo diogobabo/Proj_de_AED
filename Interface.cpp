@@ -92,3 +92,7 @@ void Interface::iniciate() {
 void Interface::login() {
 
 }
+
+void Interface::povoarVoos() {
+
+}

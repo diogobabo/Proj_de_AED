@@ -13,6 +13,7 @@ private:
     void login();
     int menuCall();
     bool isNumber(const std::string &s) const;
+    void povoarVoos();
 public:
     void iniciate();
 };

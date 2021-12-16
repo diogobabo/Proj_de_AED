@@ -30,8 +30,8 @@ public:
     Flight getLastFlights();
 
 
-
 };
+
 
 
 #endif //PROJ_DE_AED_AIRPLANE_H
