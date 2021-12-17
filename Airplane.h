@@ -14,12 +14,13 @@
 class Airplane {
 private:
     std::string plate;
-    int seatsAvailable;
+    std::string type;
+    int seats;
     std::list<Flight> flights;
     std::queue<Maintenance> maintenanceToBeDone;
     std::list<Maintenance> maintenanceToDone;
 public:
-    Airplane(std::string plate);
+    Airplane(std::string plate,std::string type,int seatsAvailable);
     std::string getPlate();
     int getSeats();
     Flight getNextFlight();

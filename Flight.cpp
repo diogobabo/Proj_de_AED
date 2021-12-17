@@ -31,3 +31,22 @@ std::string Flight::getDestiny() {
 void Flight::setDate(std::string date) {
     this->StartDate=date;
 }
+
+bool Flight::operator<(Flight &f) {
+    return getFlightID() <f.getFlightID();
+}
+
+bool Flight::operator==(Flight &f) {
+    return getFlightID() == f.getFlightID();
+}
+
+Flight::Flight(int number, std::string StartDate, std::string Duration, std::string Origin, std::string destiny,std::vector<std::string> passengersid) {
+    this->FlightNumber = number;
+    this->StartDate = StartDate;
+    this->Duration = Duration;
+    this->Origin = Origin;
+    this->Destiny = destiny;
+    for(auto sus : passengersid){
+        this->passengersid.push_back(std::stoi(sus));
+    }
+}

@@ -10,10 +10,13 @@
 
 class Passenger {
 private:
+    int id;
     std::string name;
 public:
-    Passenger(std::string name);
+    Passenger(std::string id,std::string name);
     Passenger();
+    void setId(int id);
+    int getId();
     void setName(std::string name);
     std::string getName();
 };

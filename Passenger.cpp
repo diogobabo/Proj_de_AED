@@ -12,3 +12,16 @@ void Passenger::setName(std::string name) {
 std::string Passenger::getName() {
     return name;
 }
+
+int Passenger::getId() {
+    return id;
+}
+
+void Passenger::setId(int id) {
+    this->id = id;
+}
+
+Passenger::Passenger(std::string id, std::string name) {
+    this->name = name;
+    this->id = std::stoi(id);
+}

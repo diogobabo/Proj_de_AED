@@ -17,8 +17,9 @@ private:
     std::vector<Passenger> clients;
     std::fstream aiplanesfile;
     std::fstream clientsfile;
+    std::vector<Flight> allFlights;
+    void SplitString(std::string s, std::vector<std::string> &v,char c);
 public:
-    AirplaneCompany(std::fstream aiplanesfile,std::fstream clientsfile);
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
 
 

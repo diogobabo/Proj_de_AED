@@ -6,7 +6,9 @@
 #define PROJ_DE_AED_FLIGHT_H
 
 #include <string>
-
+#include <list>
+#include <vector>
+#include "Passenger.h"
 
 class Flight {
 private:
@@ -15,8 +17,9 @@ private:
     std::string Duration; // format hours:minutes
     std::string Origin;
     std::string Destiny;
+    std::list<int> passengersid;
 public:
-    Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny);
+    Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny,std::vector<std::string> passengersid);
     void setDate(std::string date);
     void setDuration(std::string Duration);
     int getFlightID();
@@ -24,6 +27,8 @@ public:
     std::string getOrigin();
     std::string getStartDate();
     std::string getDestiny();
+    bool operator <(Flight &f);
+    bool operator ==(Flight &f);
 
 
 

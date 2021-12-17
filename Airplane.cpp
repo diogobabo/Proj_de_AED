@@ -13,7 +13,7 @@ std::string Airplane::getPlate() {
 }
 
 int Airplane::getSeats() {
-    return seatsAvailable;
+    return seats;
 }
 
 std::list<Flight> Airplane::getFlights() {
@@ -22,4 +22,9 @@ std::list<Flight> Airplane::getFlights() {
 
 std::list<Maintenance> Airplane::getMaintenance() {
     return maintenanceToDone;
+}
+Airplane::Airplane(std::string plate, std::string type, int seatsAvailable) {
+    this->plate = plate;
+    this-> type = type;
+    this->seats = seatsAvailable;
 }
