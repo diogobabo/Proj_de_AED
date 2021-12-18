@@ -101,8 +101,8 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
     std::string flights,main;
 
     for(auto x : planes) {
-        flights = " ";
-        main = " ";
+        flights = "";
+        main = "";
         for(auto y : x.getFlights()) {
             std::string id = std::to_string(y.getFlightID());
             while(id.size() < 4) {
@@ -123,7 +123,7 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
 void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
     std::fstream f;
     f.open(flightsTXT, std::ios::out | std::ios::trunc);
-    std::string clients = " ";
+    std::string clients = "";
     for(auto x : allFlights) {
         std::string id = std::to_string(x.getFlightID());
         while(id.size() < 4) {
@@ -139,4 +139,10 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
         clients.pop_back();
         f << id << '-' << x.getStartDate() << '-' << x.getDuration() << '-' << x.getOrigin() << '-' << x.getDestiny() << '-' << clients;
     }
+}
+
+void AirplaneCompany::dump() {
+    writeClientsFile("clientes.txt");
+    writeFlightsFile("flights.txt");
+    writeAirplanesFile("airplanes.txt");
 }

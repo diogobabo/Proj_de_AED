@@ -109,6 +109,7 @@ void Interface::login() {
 void Interface::loginAsCompany(){
     try{
         AirplaneCompany company("airplanes.txt","clientes.txt");
+        company.dump();
     }catch(...){
         std::cout << "DATA FILES MISSING" << std::endl;
         system("pause");
