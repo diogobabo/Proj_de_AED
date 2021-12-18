@@ -27,6 +27,7 @@ public:
     std::string getOrigin();
     std::string getStartDate();
     std::string getDestiny();
+    std::list<int> getPassengersId();
     bool operator <(Flight &f);
     bool operator ==(Flight &f);
 

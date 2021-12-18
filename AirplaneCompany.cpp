@@ -117,4 +117,26 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
         flights.pop_back();
         f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << main;
     }
+    f.close();
+}
+
+void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
+    std::fstream f;
+    f.open(flightsTXT, std::ios::out | std::ios::trunc);
+    std::string clients = " ";
+    for(auto x : allFlights) {
+        std::string id = std::to_string(x.getFlightID());
+        while(id.size() < 4) {
+            id.insert(0,"0");
+        }
+        for(auto y : x.getPassengersId()) {
+            std::string idPass = std::to_string(y);
+            while(idPass.size() < 4) {
+                idPass.insert(0,"0");
+            }
+            clients += y + ',';
+        }
+        clients.pop_back();
+        f << id << '-' << x.getStartDate() << '-' << x.getDuration() << '-' << x.getOrigin() << '-' << x.getDestiny() << '-' << clients;
+    }
 }

@@ -50,3 +50,7 @@ Flight::Flight(int number, std::string StartDate, std::string Duration, std::str
         this->passengersid.push_back(std::stoi(sus));
     }
 }
+
+std::list<int> Flight::getPassengersId() {
+    return passengersid;
+}
