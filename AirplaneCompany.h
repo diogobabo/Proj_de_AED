@@ -21,6 +21,8 @@ private:
     void SplitString(std::string s, std::vector<std::string> &v,char c);
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
+    void writeClientsFile(std::string clientsfileTXT);
+    void writeAirplanesFile(std::string airplanesfileTXT);
 
 
 };

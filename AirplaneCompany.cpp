@@ -3,6 +3,7 @@
 //
 
 #include "AirplaneCompany.h"
+#include <iostream>
 
 AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string clientsfileTXT):aiplanesfile(),clientsfile() {
     aiplanesfile.open(aiplanesfileTXT);
@@ -79,4 +80,40 @@ void AirplaneCompany::SplitString(std::string s, std::vector<std::string> &v, ch
 
     }
     v.push_back(temp);
+}
+
+void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
+    std::fstream f;
+    f.open(clientsfileTXT, std::ios::out | std::ios::trunc);
+    for(auto x : clients) {
+        std::string id = std::to_string(x.getId());
+        while(id.size() < 4) {
+            id.insert(0,"0");
+        }
+        f << id << ':' << x.getName() << std::endl;
+    }
+    f.close();
+}
+
+void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
+    std::fstream f;
+    f.open(airplanesfileTXT, std::ios::out | std::ios::trunc);
+    std::string flights,main;
+
+    for(auto x : planes) {
+        flights = " ";
+        main = " ";
+        for(auto y : x.getFlights()) {
+            std::string id = std::to_string(y.getFlightID());
+            while(id.size() < 4) {
+                id.insert(0,"0");
+            }
+            flights = flights + id + ':';
+        }
+        /* for(auto z : x.getMaintenance()) {
+            main += z.
+        } */
+        flights.pop_back();
+        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-';
+    }
 }

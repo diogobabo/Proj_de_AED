@@ -29,6 +29,7 @@ public:
     std::list<Maintenance> getMaintenance();
     std::list<Flight> getFlights();
     Flight getLastFlights();
+    std::string getType();
 
 
 };

@@ -28,3 +28,7 @@ Airplane::Airplane(std::string plate, std::string type, int seatsAvailable) {
     this-> type = type;
     this->seats = seatsAvailable;
 }
+
+std::string Airplane::getType() {
+    return type;
+}
