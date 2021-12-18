@@ -23,6 +23,8 @@ AirplaneCompany.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 iostream
 -
+sstream
+-
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 vector
@@ -43,18 +45,6 @@ vector
 -
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.cpp
-iostream
--
-sstream
--
-Interface.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
-AirplaneCompany.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 string

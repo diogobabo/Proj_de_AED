@@ -24,3 +24,11 @@ Maintenance::Maintenance(std::string Type, std::string Date, std::string Employe
 bool Maintenance::isDone() {
     return Done;
 }
+std::string Maintenance::getMaintenanceInfo() {
+    if(Done = false) {
+        return(Date + '/' + Type);
+    }
+    else {
+        return(Date + '/' + Type + '-' + Employee);
+    }
+}

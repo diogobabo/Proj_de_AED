@@ -5,6 +5,11 @@
 #ifndef PROJ_DE_AED_AIRPLANECOMPANY_H
 #define PROJ_DE_AED_AIRPLANECOMPANY_H
 
+#ifdef _WIN32
+#define CLEAR "cls"
+#else
+#define CLEAR "clear"
+#endif
 
 #include <vector>
 #include <fstream>
@@ -22,10 +27,13 @@ private:
     void writeClientsFile(std::string clientsfileTXT);
     void writeAirplanesFile(std::string airplanesfileTXT);
     void writeFlightsFile(std::string flightsTXT);
+    bool isNumber(const std::string &s) const;
+    void addClient();
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
     void getOptions();
+
 
 };
 

@@ -17,6 +17,9 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
     }
     std::string s;
     while(std::getline(clientsfile,s)){
+        if(s == "/n"){
+            continue;
+        }
         Passenger p(s.substr(0,s.find(':')),s.substr(s.find(':')+1,s.length()-1));
         clients.push_back(p);
     }
@@ -28,6 +31,9 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         throw "flightFile";
     }
     while(std::getline(flightFile,s)){
+        if(s == "/n"){
+            continue;
+        }
 
         std::vector<std::string> flight,p;
 
@@ -40,11 +46,17 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
     }
 
     while(std::getline(aiplanesfile,s)){
+        bool flag = true;
+        if(s == "/n"){
+            continue;
+        }
         std::string type= s.substr(0,4);
         std::string plate= s.substr(5,4);
         std::string seats = s.substr(10,3);
         std::string rest = s.substr(14);
         Airplane p(plate,type,std::stoi(seats));
+        if(rest.find('-') == std::string::npos)
+            flag = false;
         std::string flights = rest.substr(0,rest.find('-'));
         std::string maintenances = rest.substr(rest.find('-')+1);
         std::vector<std::string> f,m;
@@ -57,20 +69,22 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
                     p.addFligth(y);
             }
 
-        }
+        }if(flag){
+
+
         for(auto x : m){
+
             if(x.find('-') == std::string::npos){
-                Maintenance M(x.substr(x.find('/')),x.substr(0,10));
+                Maintenance M(x.substr(x.find('/')).substr(1),x.substr(0,10));
                 p.addMaintenance(M);
             }else{
                 std::vector<std::string> s;
-                std::string x;
                 SplitString(x,s,'-');
-                Maintenance M(s[0].substr(x.find('/')),s[0].substr(0,10),s[1]);
+                Maintenance M(s[0].substr(x.find('/')).substr(1),s[0].substr(0,10),s[1]);
                 p.addMaintenance(M);
             }
         }
-
+    }
         planes.push_back(p);
 
     }
@@ -105,16 +119,6 @@ void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
         }
         f << id << ':' << x.getName() << std::endl;
     }
-    std::stringstream buffer;                             // Store contents in a std::string
-    buffer << f.rdbuf();
-    std::string contents = buffer.str();
-
-    f.close();
-    contents.pop_back();                                  // Remove last character
-
-
-    std::ofstream fileOut( clientsfileTXT , std::ios::trunc); // Open for writing (while also clearing file)
-    fileOut << contents;
     f.close();
 }
 
@@ -139,16 +143,6 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
         flights.pop_back();
         f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
     }
-    std::stringstream buffer;                             // Store contents in a std::string
-    buffer << f.rdbuf();
-    std::string contents = buffer.str();
-
-    f.close();
-    contents.pop_back();                                  // Remove last character
-
-
-    std::ofstream fileOut( airplanesfileTXT , std::ios::trunc); // Open for writing (while also clearing file)
-    fileOut << contents;
     f.close();
 }
 
@@ -172,16 +166,6 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
         std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
         f << a << std::endl;
     }
-    std::stringstream buffer;                             // Store contents in a std::string
-    buffer << f.rdbuf();
-    std::string contents = buffer.str();
-
-    f.close();
-    contents.pop_back();                                  // Remove last character
-
-
-    std::ofstream fileOut( flightsTXT , std::ios::trunc); // Open for writing (while also clearing file)
-    fileOut << contents;
     f.close();
 }
 
@@ -190,7 +174,73 @@ void AirplaneCompany::dump() {
     writeFlightsFile("flights.txt");
     writeAirplanesFile("airplanes.txt");
 }
+bool AirplaneCompany::isNumber(const std::string &s) const            //verifies if the string contains only numbers
+{
+    for(int x = 0; x<s.size();x++){
+
+        if(isdigit(s[x]) == false)
+            return false;
+
+    }
+    return true;
+}
 
 void AirplaneCompany::getOptions() {
+    bool flag = true;
+
+    int number = 50;
+
+    while (flag) {          //checks the input
+        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl << "0) BACK"<< std::endl;
+
+        std::string x;
+
+        std::cin >> x;
+
+        if (std::cin.fail() || std::cin.peek() != '\n' || x.size() != 1 || !isNumber(x)) {
+            std::system(CLEAR);
+            std::cout << "Invalid input, please try again: " << std::endl;
+
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.clear();
+
+            flag = true;
+
+        } else {
+
+            std::stringstream ss(x);
+
+            ss >> number;
+
+            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5) {
+                flag = false;
+            } else {
+                std::system(CLEAR);
+                std::cout << "Invalid input, please try again:" << std::endl;
+            }
+        }
+        if(flag == false){
+            if(number == 0){
+                return;
+            }
+            else if(number == 1){
+
+            }
+            else if(number == 2){
+
+            }
+            else if(number == 3){
+
+            }
+            else if(number == 4){
+
+            }
+            else if(number == 5){
+
+            }
+        }
+    }
+
+
 
 }

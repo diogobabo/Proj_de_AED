@@ -20,6 +20,8 @@ public:
     bool setMaintenaceDone(std::string Employee);
     bool isDone();
     std::string getDate();
+
+    std::string getMaintenanceInfo();
 };
 
 

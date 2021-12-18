@@ -30,8 +30,6 @@ public:
     std::list<Flight> getFlights();
     Flight getLastFlights();
     std::string getType();
-
-
 };
 
 
