@@ -18,6 +18,7 @@ public:
     Maintenance(std::string Type,std::string Date);
     bool setMaintenaceDone(std::string Employee);
     bool isDone();
+    std::string getDate();
 };
 
 

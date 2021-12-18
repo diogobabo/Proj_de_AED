@@ -3,3 +3,7 @@
 //
 
 #include "Maintenance.h"
+
+std::string Maintenance::getDate() {
+    return Date;
+}

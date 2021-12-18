@@ -110,10 +110,11 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
             }
             flights = flights + id + ':';
         }
-        /* for(auto z : x.getMaintenance()) {
-            main += z.
-        } */
+        for(auto z : x.getMaintenance()) {
+            main += z.getDate() + ',';
+        }
+        main.pop_back();
         flights.pop_back();
-        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-';
+        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << main;
     }
 }
