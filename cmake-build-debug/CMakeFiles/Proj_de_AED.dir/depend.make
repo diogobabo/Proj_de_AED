@@ -38,6 +38,8 @@ CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj: \
  ../Passenger.cpp \
  ../Passenger.h
 CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj: \
+ ../Flight.h \
+ ../Passenger.h \
  ../Ticket.cpp \
  ../Ticket.h
 CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj: \

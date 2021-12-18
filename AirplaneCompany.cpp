@@ -134,7 +134,7 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
         mainDone = "";
         mainTotal = "";
         if(x.getFlights().empty()){
-            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << std::endl;
             continue;
         }
         for(auto y : x.getFlights()) {
@@ -251,7 +251,8 @@ void AirplaneCompany::getOptions() {
                 return;
             }
             else if(number == 1){
-
+                addPlane();
+                flag = true;
             }
             else if(number == 2){
                 addClient();
@@ -261,16 +262,14 @@ void AirplaneCompany::getOptions() {
 
             }
             else if(number == 4){
-
+                airplanesInfo();
+                flag = true;
             }
             else if(number == 5){
 
             }
         }
     }
-
-
-
 }
 
 void AirplaneCompany::addClient() {
@@ -278,23 +277,82 @@ void AirplaneCompany::addClient() {
 
     while(flag == true){
 
-    std::system(CLEAR);
-    std::cout << "CLIENT NAME:";
-    std::string x;
-    std::cin >> x;
-    if (std::cin.fail() || std::cin.peek() != '\n') {
         std::system(CLEAR);
-        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cout << "CLIENT NAME:";
+        std::string x;
+        std::cin >> x;
+        if (std::cin.fail() || std::cin.peek() != '\n') {
+            std::system(CLEAR);
+            std::cout << "Invalid input, please try again: " << std::endl;
 
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.clear();
 
-    }else{
-        flag = false;
-        Passenger p(clients.back().getId()+1,x);
-        clients.push_back(p);
-        std::cout << "CLIENT ADDED" << std::endl;
-        return;
+        }else{
+            flag = false;
+            Passenger p(clients.back().getId()+1,x);
+            clients.push_back(p);
+            std::cout << "CLIENT ADDED" << std::endl;
+            return;
+        }
     }
 }
+
+void AirplaneCompany::airplanesInfo() {
+    bool flag;
+    int x;
+    std::cout << "1) CHECK FLIGHTS OF A AIRPLANE" << std::endl << "2) SHOW ALL FLIGHTS" << std::endl;
+    std::cin >> x;
+
+    while (!std::cin || !(std::cin.peek() == '\n')  || x > 4){
+        std::cin.clear();
+        std::cin.ignore(9999, '\n');
+        std::cout << "Invalid input! Try again: ";
+        std::cin >> x;
+    }
+    if(x == 1) {
+        bool found = false;
+        std::string plate;
+        std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+        std::cin >> plate;
+
+        for(auto x : planes) {
+            if(x.getPlate() == plate) {
+                found = true;
+                for(auto y : x.getFlights()) {
+                    std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+                }
+            }
+        }
+        std::cout << '\n';
+        if(!found) {
+            std::cout << "There are no flights for that plane!" << std::endl;
+        }
+    }
+    if(x == 2) {
+        for(auto x : planes) {
+            for(auto y : x.getFlights()) {
+                std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+            }
+        }
+    }
+    return;
 }
+
+void AirplaneCompany::addPlane() {
+    std::string plate,type;
+    int seats;
+    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+    std::cin >> plate;
+    std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
+    std::cin >> type;
+    std::cout << "TYPE THE NUMBER OF SEATS OF THE PLANE" << std::endl;
+    std::cin >> seats;
+    Airplane plane(plate,type,seats);
+    planes.push_back(plane);
+    std::cout << "Plane added SUCCESSFULLY!" << std::endl;
+    return;
+}
+
+
+

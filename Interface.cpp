@@ -109,7 +109,6 @@ void Interface::login() {
 void Interface::loginAsCompany(){
     AirplaneCompany company("airplanes.txt","clientes.txt");
     company.getOptions();
-
     company.dump();
 }
 

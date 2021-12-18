@@ -28,7 +28,9 @@ private:
     void writeAirplanesFile(std::string airplanesfileTXT);
     void writeFlightsFile(std::string flightsTXT);
     bool isNumber(const std::string &s) const;
+    void airplanesInfo();
     void addClient();
+    void addPlane();
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
