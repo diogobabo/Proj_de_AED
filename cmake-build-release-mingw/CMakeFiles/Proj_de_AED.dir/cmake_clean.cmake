@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj"
   "CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj"
   "CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj"
+  "CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj"
   "CMakeFiles/Proj_de_AED.dir/main.cpp.obj"
   "Proj_de_AED.exe"
   "Proj_de_AED.exe.manifest"

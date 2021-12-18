@@ -137,6 +137,12 @@
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/luggage.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/luggage.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>

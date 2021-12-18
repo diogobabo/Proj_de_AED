@@ -27,10 +27,16 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
     std::sort(clients.begin(),clients.end());
     std::fstream flightFile;
     flightFile.open("flights.txt");
-
+    std::fstream LFile;
+    flightFile.open("luggage.txt");
     if(!flightFile.is_open()){
         throw "flightFile";
     }
+    if(!LFile.is_open()){
+        throw "LFileFile";
+    }
+    std::vector<Luggage>l;
+
     while(std::getline(flightFile,s)){
         if(s == "/n"){
             continue;
@@ -45,7 +51,13 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         allFlights.push_back(f);
 
     }
-
+    while (std::getline(LFile,s)){
+        Passenger p(s.substr(s.find('-')),"");
+        Flight f(std::stoi(s.substr(s.find('-'))));
+        Passenger a = *std::find(clients.begin(),clients.end(),p);
+        Flight fi = *std::find(allFlights.begin(),allFlights.end(),f);
+        Luggage L(a,fi);
+    }
     while(std::getline(aiplanesfile,s)){
         bool flag = true;
         if(s == "/n"){
@@ -223,7 +235,7 @@ void AirplaneCompany::getOptions() {
     int number = 50;
 
     while (flag) {          //checks the input
-        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl << "0) BACK"<< std::endl;
+        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl<<"6) FLIGHT LOGISTICS" << std::endl << "0) BACK"<< std::endl;
 
         std::string x;
 
@@ -244,7 +256,7 @@ void AirplaneCompany::getOptions() {
 
             ss >> number;
 
-            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5) {
+            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5|| number == 6) {
                 flag = false;
             } else {
                 std::system(CLEAR);
@@ -357,6 +369,14 @@ void AirplaneCompany::addPlane() {
     planes.push_back(plane);
     std::cout << "Plane added SUCCESSFULLY!" << std::endl;
     return;
+}
+
+void AirplaneCompany::buyTicket() {
+
+}
+
+void AirplaneCompany::logistics() {
+
 }
 
 

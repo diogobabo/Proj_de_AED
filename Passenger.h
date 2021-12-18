@@ -15,11 +15,13 @@ private:
 public:
     Passenger(std::string id,std::string name);
     Passenger(int id,std::string name);
+    Passenger();
     void setId(int id);
-    int getId();
+    int getId() const;
     void setName(std::string name);
     std::string getName();
     bool operator <(Passenger &p);
+    bool operator ==(const Passenger &p)const;
 };
 
 

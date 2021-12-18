@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-mingw/CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-mingw/CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-mingw/CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj"
+  "C:/Users/Diogo Babo/Desktop/Proj_de_AED/luggage.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-mingw/CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-mingw/CMakeFiles/Proj_de_AED.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -251,6 +251,25 @@ CMakeFiles\Proj_de_AED.dir\Ticket.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Proj_de_AED.dir\Ticket.cpp.s /c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Ticket.cpp"
 <<
 
+CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj: CMakeFiles\Proj_de_AED.dir\flags.make
+CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj: ..\Luggage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-visual-studio\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.293\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj /FdCMakeFiles\Proj_de_AED.dir\ /FS -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp"
+<<
+
+CMakeFiles\Proj_de_AED.dir\Luggage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Luggage.cpp.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.293\bin\Hostx86\x86\cl.exe > CMakeFiles\Proj_de_AED.dir\Luggage.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp"
+<<
+
+CMakeFiles\Proj_de_AED.dir\Luggage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Luggage.cpp.s"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.293\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Proj_de_AED.dir\Luggage.cpp.s /c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp"
+<<
+
 # Object files for target Proj_de_AED
 Proj_de_AED_OBJECTS = \
 "CMakeFiles\Proj_de_AED.dir\main.cpp.obj" \
@@ -262,7 +281,8 @@ Proj_de_AED_OBJECTS = \
 "CMakeFiles\Proj_de_AED.dir\Interface.cpp.obj" \
 "CMakeFiles\Proj_de_AED.dir\Airport.cpp.obj" \
 "CMakeFiles\Proj_de_AED.dir\Transport.cpp.obj" \
-"CMakeFiles\Proj_de_AED.dir\Ticket.cpp.obj"
+"CMakeFiles\Proj_de_AED.dir\Ticket.cpp.obj" \
+"CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj"
 
 # External object files for target Proj_de_AED
 Proj_de_AED_EXTERNAL_OBJECTS =
@@ -277,9 +297,10 @@ Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\Interface.cpp.obj
 Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\Airport.cpp.obj
 Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\Transport.cpp.obj
 Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\Ticket.cpp.obj
+Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj
 Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\build.make
 Proj_de_AED.exe: CMakeFiles\Proj_de_AED.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-visual-studio\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Proj_de_AED.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-visual-studio\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Proj_de_AED.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Proj_de_AED.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.293\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Proj_de_AED.dir\objects1.rsp @<<
  /out:Proj_de_AED.exe /implib:Proj_de_AED.lib /pdb:"C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-visual-studio\Proj_de_AED.pdb" /version:0.0  /machine:X86 /INCREMENTAL:NO /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

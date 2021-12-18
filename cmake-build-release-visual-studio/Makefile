@@ -262,6 +262,33 @@ Interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Interface.cpp.s
 .PHONY : Interface.cpp.s
 
+Luggage.obj: Luggage.cpp.obj
+
+.PHONY : Luggage.obj
+
+# target to build an object file
+Luggage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj
+.PHONY : Luggage.cpp.obj
+
+Luggage.i: Luggage.cpp.i
+
+.PHONY : Luggage.i
+
+# target to preprocess a source file
+Luggage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Luggage.cpp.i
+.PHONY : Luggage.cpp.i
+
+Luggage.s: Luggage.cpp.s
+
+.PHONY : Luggage.s
+
+# target to generate assembly for a file
+Luggage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Luggage.cpp.s
+.PHONY : Luggage.cpp.s
+
 Maintenance.obj: Maintenance.cpp.obj
 
 .PHONY : Maintenance.obj
@@ -421,6 +448,9 @@ help:
 	@echo ... Interface.obj
 	@echo ... Interface.i
 	@echo ... Interface.s
+	@echo ... Luggage.obj
+	@echo ... Luggage.i
+	@echo ... Luggage.s
 	@echo ... Maintenance.obj
 	@echo ... Maintenance.i
 	@echo ... Maintenance.s

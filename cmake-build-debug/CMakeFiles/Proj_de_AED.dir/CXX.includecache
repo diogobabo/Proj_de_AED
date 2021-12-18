@@ -6,53 +6,29 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 string
 -
 list
 -
-queue
+vector
 -
+Passenger.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
+Luggage.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.cpp
+Luggage.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+Passenger.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
 Flight.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Flight.h
-Maintenance.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 
-C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.cpp
-AirplaneCompany.h
-C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
-iostream
--
-algorithm
--
-sstream
--
-
-C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
-vector
--
-fstream
--
-Airplane.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h
-Passenger.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/oliveira/Desktop/Proj_de_AED/Flight.h
-string
--
-list
--
-vector
--
-Passenger.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.h
-string
--
-
-C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
 string
 -
 

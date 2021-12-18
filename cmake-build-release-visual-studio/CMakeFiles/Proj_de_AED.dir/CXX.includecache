@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.cpp
+Airplane.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
+
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
 string
 -
@@ -23,6 +27,8 @@ AirplaneCompany.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 iostream
 -
+algorithm
+-
 sstream
 -
 
@@ -35,6 +41,12 @@ Airplane.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
+Luggage.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp
+Flight.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 string
@@ -45,6 +57,30 @@ vector
 -
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
+Luggage.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.cpp
+iostream
+-
+sstream
+-
+Interface.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
+AirplaneCompany.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.cpp
+Luggage.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
+Passenger.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
+Flight.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 string
@@ -53,4 +89,12 @@ string
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
 string
 -
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp
+Ticket.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h
+
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h
+Flight.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 

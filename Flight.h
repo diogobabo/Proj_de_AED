@@ -9,6 +9,7 @@
 #include <list>
 #include <vector>
 #include "Passenger.h"
+#include "Luggage.h"
 
 class Flight {
 private:
@@ -18,18 +19,21 @@ private:
     std::string Origin;
     std::string Destiny;
     std::list<int> passengersid;
+    std::vector<Luggage> Luggage;
 public:
     Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny,std::vector<std::string> passengersid);
+    Flight(int number);
+    Flight();
     void setDate(std::string date);
     void setDuration(std::string Duration);
-    int getFlightID();
+    int getFlightID()const;
     std::string getDuration();
     std::string getOrigin();
     std::string getStartDate();
     std::string getDestiny();
     std::list<int> getPassengersId();
     bool operator <(Flight &f);
-    bool operator ==(Flight &f);
+    bool operator ==(const Flight &f) const ;
 
 
 

@@ -13,7 +13,7 @@ std::string Passenger::getName() {
     return name;
 }
 
-int Passenger::getId() {
+int Passenger::getId() const {
     return id;
 }
 
@@ -33,4 +33,12 @@ bool Passenger::operator<(Passenger &p) {
 Passenger::Passenger(int id, std::string name) {
     this->name = name;
     this->id = id;
+}
+
+bool Passenger::operator==(const Passenger &p) const {
+    return this->id == p.getId();
+}
+Passenger::Passenger() {
+    id = 0;
+    name = "";
 }

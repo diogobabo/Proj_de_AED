@@ -385,6 +385,33 @@ Transport.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Transport.cpp.s
 .PHONY : Transport.cpp.s
 
+luggage.obj: luggage.cpp.obj
+
+.PHONY : luggage.obj
+
+# target to build an object file
+luggage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj
+.PHONY : luggage.cpp.obj
+
+luggage.i: luggage.cpp.i
+
+.PHONY : luggage.i
+
+# target to preprocess a source file
+luggage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.i
+.PHONY : luggage.cpp.i
+
+luggage.s: luggage.cpp.s
+
+.PHONY : luggage.s
+
+# target to generate assembly for a file
+luggage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.s
+.PHONY : luggage.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -448,6 +475,9 @@ help:
 	@echo ... Transport.obj
 	@echo ... Transport.i
 	@echo ... Transport.s
+	@echo ... luggage.obj
+	@echo ... luggage.i
+	@echo ... luggage.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

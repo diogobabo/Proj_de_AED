@@ -12,7 +12,7 @@ void Flight::setDuration(std::string Duration) {
     this->Duration=Duration;
 }
 
-int Flight::getFlightID() {
+int Flight::getFlightID() const{
     return FlightNumber;
 }
 
@@ -36,7 +36,7 @@ bool Flight::operator<(Flight &f) {
     return getFlightID() <f.getFlightID();
 }
 
-bool Flight::operator==(Flight &f) {
+bool Flight::operator==(const Flight &f) const {
     return getFlightID() == f.getFlightID();
 }
 
@@ -53,4 +53,12 @@ Flight::Flight(int number, std::string StartDate, std::string Duration, std::str
 
 std::list<int> Flight::getPassengersId() {
     return passengersid;
+}
+
+Flight::Flight(int number) {
+    this->FlightNumber = number;
+}
+
+Flight::Flight() {
+
 }
