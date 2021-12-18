@@ -54,7 +54,14 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         std::string type= s.substr(0,4);
         std::string plate= s.substr(5,4);
         std::string seats = s.substr(10,3);
-        std::string rest = s.substr(14);
+        std::string rest;
+        if(s.length()<15){
+            rest = s;
+            Airplane p(plate,type,std::stoi(seats));
+            planes.push_back(p);
+            continue;
+        }else
+            rest = s.substr(14);
         Airplane p(plate,type,std::stoi(seats));
         if(rest.find('-') == std::string::npos)
             flag = false;
@@ -366,6 +373,20 @@ void AirplaneCompany::addPlane() {
     planes.push_back(plane);
     std::cout << "Plane added SUCCESSFULLY!" << std::endl;
     return;
+}
+
+void AirplaneCompany::removePlane() {
+    std::string plate,type;
+    int seats;
+    std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
+    checkInputStringPlane(type);
+    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+    checkInputStringPlane(plate);
+    for(auto it = planes.begin(); it != planes.end(); it++) {
+        if(it->getPlate() == plate && it->getType() == type) {
+            it = planes.erase(it);
+        }
+    }
 }
 
 
