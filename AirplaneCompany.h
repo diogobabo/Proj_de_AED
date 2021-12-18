@@ -31,6 +31,7 @@ private:
     void airplanesInfo();
     void addClient();
     void addPlane();
+    void checkInputStringPlane(std::string &x);
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();

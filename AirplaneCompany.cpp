@@ -303,19 +303,17 @@ void AirplaneCompany::airplanesInfo() {
     int x;
     std::cout << "1) CHECK FLIGHTS OF A AIRPLANE" << std::endl << "2) SHOW ALL FLIGHTS" << std::endl;
     std::cin >> x;
-
-    while (!std::cin || !(std::cin.peek() == '\n')  || x > 4){
+    while(!std::cin || x > 2) {
         std::cin.clear();
-        std::cin.ignore(9999, '\n');
-        std::cout << "Invalid input! Try again: ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
         std::cin >> x;
     }
     if(x == 1) {
         bool found = false;
         std::string plate;
         std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
-        std::cin >> plate;
-
+        checkInputStringPlane(plate);
         for(auto x : planes) {
             if(x.getPlate() == plate) {
                 found = true;
@@ -329,7 +327,7 @@ void AirplaneCompany::airplanesInfo() {
             std::cout << "There are no flights for that plane!" << std::endl;
         }
     }
-    if(x == 2) {
+    else if(x == 2) {
         for(auto x : planes) {
             for(auto y : x.getFlights()) {
                 std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
@@ -339,15 +337,31 @@ void AirplaneCompany::airplanesInfo() {
     return;
 }
 
+void AirplaneCompany::checkInputStringPlane(std::string &x) {
+    std::cin >> x;
+    while(std::cin.fail() || x.length() != 4 || isNumber(x)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> x;
+    }
+}
+
 void AirplaneCompany::addPlane() {
     std::string plate,type;
     int seats;
-    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
-    std::cin >> plate;
     std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
-    std::cin >> type;
+    checkInputStringPlane(type);
+    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+    checkInputStringPlane(plate);
     std::cout << "TYPE THE NUMBER OF SEATS OF THE PLANE" << std::endl;
     std::cin >> seats;
+    while(!std::cin || std::to_string(seats).size() != 3) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> seats;
+    }
     Airplane plane(plate,type,seats);
     planes.push_back(plane);
     std::cout << "Plane added SUCCESSFULLY!" << std::endl;
