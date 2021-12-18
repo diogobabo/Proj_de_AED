@@ -18,6 +18,12 @@ C:/Users/oliveira/Desktop/Proj_de_AED/Flight.h
 Maintenance.h
 C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.h
 
+C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.cpp
+AirplaneCompany.h
+C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
+iostream
+-
+
 C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
 vector
 -
@@ -37,18 +43,6 @@ vector
 -
 Passenger.h
 C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/oliveira/Desktop/Proj_de_AED/Interface.cpp
-iostream
--
-sstream
--
-Interface.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h
-AirplaneCompany.h
-C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
-
-C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h
 
 C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.h
 string

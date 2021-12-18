@@ -84,7 +84,7 @@ void AirplaneCompany::SplitString(std::string s, std::vector<std::string> &v, ch
 
 void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
     std::fstream f;
-    f.open(clientsfileTXT, std::ios::out | std::ios::trunc);
+    f.open(clientsfileTXT,std::ios::trunc);
     for(auto x : clients) {
         std::string id = std::to_string(x.getId());
         while(id.size() < 4) {
@@ -97,7 +97,7 @@ void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
 
 void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
     std::fstream f;
-    f.open(airplanesfileTXT, std::ios::out | std::ios::trunc);
+    f.open(airplanesfileTXT, std::ios::trunc);
     std::string flights,main;
 
     for(auto x : planes) {
@@ -110,21 +110,17 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
             }
             flights = flights + id + ':';
         }
-        for(auto z : x.getMaintenance()) {
-            main += z.getDate() + ',';
-        }
-        main.pop_back();
         flights.pop_back();
-        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << main;
+        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights;
     }
     f.close();
 }
 
 void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
     std::fstream f;
-    f.open(flightsTXT, std::ios::out | std::ios::trunc);
-    std::string clients = "";
+    f.open(flightsTXT, std::ios::trunc);
     for(auto x : allFlights) {
+        std::string clients = "";
         std::string id = std::to_string(x.getFlightID());
         while(id.size() < 4) {
             id.insert(0,"0");
@@ -134,11 +130,13 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
             while(idPass.size() < 4) {
                 idPass.insert(0,"0");
             }
-            clients += y + ',';
+            clients += idPass + ',';
         }
         clients.pop_back();
-        f << id << '-' << x.getStartDate() << '-' << x.getDuration() << '-' << x.getOrigin() << '-' << x.getDestiny() << '-' << clients;
+        std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
+        f << a;
     }
+    f.close();
 }
 
 void AirplaneCompany::dump() {
