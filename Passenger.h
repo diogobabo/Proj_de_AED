@@ -14,11 +14,12 @@ private:
     std::string name;
 public:
     Passenger(std::string id,std::string name);
-    Passenger();
+    Passenger(int id,std::string name);
     void setId(int id);
     int getId();
     void setName(std::string name);
     std::string getName();
+    bool operator <(Passenger &p);
 };
 
 

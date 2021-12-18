@@ -4,6 +4,7 @@
 
 #include "AirplaneCompany.h"
 #include <iostream>
+#include <algorithm>
 #include <sstream>
 
 AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string clientsfileTXT):aiplanesfile(),clientsfile() {
@@ -23,7 +24,7 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         Passenger p(s.substr(0,s.find(':')),s.substr(s.find(':')+1,s.length()-1));
         clients.push_back(p);
     }
-
+    std::sort(clients.begin(),clients.end());
     std::fstream flightFile;
     flightFile.open("flights.txt");
 
@@ -184,9 +185,8 @@ bool AirplaneCompany::isNumber(const std::string &s) const            //verifies
     }
     return true;
 }
-
 void AirplaneCompany::getOptions() {
-    bool flag = true;
+     bool flag = true;
 
     int number = 50;
 
@@ -227,7 +227,8 @@ void AirplaneCompany::getOptions() {
 
             }
             else if(number == 2){
-
+                addClient();
+                flag = true;
             }
             else if(number == 3){
 
@@ -243,4 +244,30 @@ void AirplaneCompany::getOptions() {
 
 
 
+}
+
+void AirplaneCompany::addClient() {
+    bool flag = true;
+
+    while(flag == true){
+
+    std::system(CLEAR);
+    std::cout << "CLIENT NAME:";
+    std::string x;
+    std::cin >> x;
+    if (std::cin.fail() || std::cin.peek() != '\n') {
+        std::system(CLEAR);
+        std::cout << "Invalid input, please try again: " << std::endl;
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.clear();
+
+    }else{
+        flag = false;
+        Passenger p(clients.back().getId()+1,x);
+        clients.push_back(p);
+        std::cout << "CLIENT ADDED" << std::endl;
+        return;
+    }
+}
 }

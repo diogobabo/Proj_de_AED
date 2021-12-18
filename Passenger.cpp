@@ -25,3 +25,12 @@ Passenger::Passenger(std::string id, std::string name) {
     this->name = name;
     this->id = std::stoi(id);
 }
+
+bool Passenger::operator<(Passenger &p) {
+    return this->id<p.getId();
+}
+
+Passenger::Passenger(int id, std::string name) {
+    this->name = name;
+    this->id = id;
+}
