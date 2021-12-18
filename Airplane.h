@@ -26,7 +26,8 @@ public:
     Flight getNextFlight();
     void addFligth(Flight flight);
     void addMaintenance(Maintenance maintenance);
-    std::list<Maintenance> getMaintenance();
+    std::list<Maintenance> getMaintenanceDone();
+    std::queue<Maintenance> getMaintenanceNotDone();
     std::list<Flight> getFlights();
     Flight getLastFlights();
     std::string getType();

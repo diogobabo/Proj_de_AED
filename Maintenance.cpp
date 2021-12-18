@@ -25,7 +25,7 @@ bool Maintenance::isDone() {
     return Done;
 }
 std::string Maintenance::getMaintenanceInfo() {
-    if(Done = false) {
+    if(Done == false) {
         return(Date + '/' + Type);
     }
     else {

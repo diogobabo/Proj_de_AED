@@ -126,10 +126,13 @@ void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
 void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
     std::fstream f;
     f.open(airplanesfileTXT, std::ofstream::out | std::ofstream::trunc);
-    std::string flights;
+    std::string flights,mainNotDone,mainDone, mainTotal;
 
     for(auto x : planes) {
         flights = "";
+        mainNotDone = "";
+        mainDone = "";
+        mainTotal = "";
         if(x.getFlights().empty()){
             f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
             continue;
@@ -141,12 +144,36 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
             }
             flights = flights + id + ':';
         }
+        for(auto z : x.getMaintenanceDone()) {
+            mainDone += z.getMaintenanceInfo() + ',';
+        }
+        std::queue<Maintenance> temp = x.getMaintenanceNotDone();
+        while(!temp.empty()) {
+            mainNotDone += temp.front().getMaintenanceInfo() + ',';
+            temp.pop();
+        }
+        if(mainDone.length() != 0) {
+            mainDone.pop_back();
+        }
+        if(mainNotDone.length() != 0) {
+            mainNotDone.pop_back();
+        }
         flights.pop_back();
-        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
+        if(mainNotDone.length() != 0 && mainDone.length() != 0) {
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << mainNotDone << ',' << mainDone << std::endl;
+        }
+        if(mainNotDone.length() == 0 && mainDone.length() != 0) {
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << mainDone << std::endl;
+        }
+        if(mainNotDone.length() != 0 && mainDone.length() == 0) {
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << '-' << mainNotDone << std::endl;
+        }
+        if(mainNotDone.length() == 0 && mainDone.length() == 0) {
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
+        }
     }
     f.close();
 }
-
 void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
     std::fstream f;
     f.open(flightsTXT, std::ofstream::out | std::ofstream::trunc);

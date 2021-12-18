@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Proj_de_AED">
-				<Option output="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Proj_de_AED.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug"/>
+				<Option output="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Proj_de_AED.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Proj_de_AED"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Proj_de_AED"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Proj_de_AED/fast">
-				<Option output="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Proj_de_AED.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug"/>
+				<Option output="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Proj_de_AED.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,84 +63,84 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Proj_de_AED/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Proj_de_AED/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug"/>
+				<Option working_dir="C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/oliveira/Desktop/Proj_de_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Airport.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Airport.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Flight.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Flight.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Interface.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Maintenance.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Ticket.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Ticket.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Transport.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/Transport.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/bst.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/main.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>
-		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/CMakeLists.txt">
+		<Unit filename="C:/Users/oliveira/Desktop/Proj_de_AED/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
