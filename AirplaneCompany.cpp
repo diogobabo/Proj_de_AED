@@ -54,7 +54,12 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         std::string type= s.substr(0,4);
         std::string plate= s.substr(5,4);
         std::string seats = s.substr(10,3);
-        std::string rest = s.substr(14);
+        std::string rest;
+        if(s.length()<15){
+            rest = s;
+        }else
+            rest = s.substr(14);
+
         Airplane p(plate,type,std::stoi(seats));
         if(rest.find('-') == std::string::npos)
             flag = false;
