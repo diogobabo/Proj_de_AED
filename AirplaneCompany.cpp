@@ -19,6 +19,7 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         Passenger p(s.substr(0,s.find(':')),s.substr(s.find(':')+1,s.length()-1));
         clients.push_back(p);
     }
+
     std::fstream flightFile;
     flightFile.open("flights.txt");
 
@@ -43,8 +44,8 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         std::string seats = s.substr(10,3);
         std::string rest = s.substr(14);
         Airplane p(plate,type,std::stoi(seats));
-        std::string flights = rest.substr(0,s.find('-'));
-        std::string maintenances = rest.substr(s.find('-')+1);
+        std::string flights = rest.substr(0,rest.find('-'));
+        std::string maintenances = rest.substr(rest.find('-')+1);
         std::vector<std::string> f,m;
         SplitString(flights,f,':');
         SplitString(maintenances,m,',');
@@ -53,9 +54,20 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
             for(auto y: allFlights){
                 if(std::stoi(x) == y.getFlightID())
                     p.addFligth(y);
-                break;
             }
 
+        }
+        for(auto x : m){
+            if(x.find('-') == std::string::npos){
+                Maintenance M(x.substr(x.find('/')),x.substr(0,10));
+                p.addMaintenance(M);
+            }else{
+                std::vector<std::string> s;
+                std::string x;
+                SplitString(x,s,'-');
+                Maintenance M(s[0].substr(x.find('/')),s[0].substr(0,10),s[1]);
+                p.addMaintenance(M);
+            }
         }
 
         planes.push_back(p);
@@ -84,7 +96,7 @@ void AirplaneCompany::SplitString(std::string s, std::vector<std::string> &v, ch
 
 void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
     std::fstream f;
-    f.open(clientsfileTXT,std::ios::trunc);
+    f.open(clientsfileTXT,std::ofstream::out | std::ofstream::trunc);
     for(auto x : clients) {
         std::string id = std::to_string(x.getId());
         while(id.size() < 4) {
@@ -97,12 +109,15 @@ void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
 
 void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
     std::fstream f;
-    f.open(airplanesfileTXT, std::ios::trunc);
-    std::string flights,main;
+    f.open(airplanesfileTXT, std::ofstream::out | std::ofstream::trunc);
+    std::string flights;
 
     for(auto x : planes) {
         flights = "";
-        main = "";
+        if(x.getFlights().empty()){
+            f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
+            continue;
+        }
         for(auto y : x.getFlights()) {
             std::string id = std::to_string(y.getFlightID());
             while(id.size() < 4) {
@@ -111,14 +126,14 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
             flights = flights + id + ':';
         }
         flights.pop_back();
-        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights;
+        f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
     }
     f.close();
 }
 
 void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
     std::fstream f;
-    f.open(flightsTXT, std::ios::trunc);
+    f.open(flightsTXT, std::ofstream::out | std::ofstream::trunc);
     for(auto x : allFlights) {
         std::string clients = "";
         std::string id = std::to_string(x.getFlightID());
@@ -134,7 +149,7 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
         }
         clients.pop_back();
         std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
-        f << a;
+        f << a << std::endl;
     }
     f.close();
 }

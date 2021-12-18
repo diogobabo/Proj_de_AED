@@ -32,3 +32,11 @@ Airplane::Airplane(std::string plate, std::string type, int seatsAvailable) {
 std::string Airplane::getType() {
     return type;
 }
+
+void Airplane::addMaintenance(Maintenance maintenance) {
+    if(maintenance.isDone()){
+        this->maintenanceToDone.push_back(maintenance);
+    }
+    else
+        this->maintenanceToBeDone.push(maintenance);
+}

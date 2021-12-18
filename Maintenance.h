@@ -16,6 +16,7 @@ private:
     bool Done;//if maintenance is done , Done = true else done = false
 public:
     Maintenance(std::string Type,std::string Date);
+    Maintenance(std::string Type,std::string Date,std::string Employee);
     bool setMaintenaceDone(std::string Employee);
     bool isDone();
     std::string getDate();

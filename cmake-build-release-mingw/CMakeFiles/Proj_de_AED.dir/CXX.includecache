@@ -25,6 +25,8 @@ C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.cpp
 AirplaneCompany.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
+iostream
+-
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 vector
@@ -35,18 +37,6 @@ Airplane.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.cpp
-Airport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h
-string
--
-bst.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h
-Transport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp
 Flight.h
@@ -74,43 +64,15 @@ C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
 
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp
+Maintenance.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
+
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 string
 -
 
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.cpp
-Passenger.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
 string
 -
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp
-Ticket.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.cpp
-Transport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h
-string
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h
-iostream
--
-stack
--
-queue
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp
-iostream
--
-Interface.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
 
