@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.cpp
-Airplane.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
-
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
 string
 -
@@ -27,6 +23,8 @@ AirplaneCompany.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 iostream
 -
+sstream
+-
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
 vector
@@ -38,10 +36,6 @@ C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
 
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.cpp
-Flight.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
-
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
 string
 -
@@ -51,22 +45,6 @@ vector
 -
 Passenger.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.cpp
-iostream
--
-sstream
--
-Interface.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
-AirplaneCompany.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp
-Maintenance.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 string

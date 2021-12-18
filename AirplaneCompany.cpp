@@ -4,6 +4,7 @@
 
 #include "AirplaneCompany.h"
 #include <iostream>
+#include <sstream>
 
 AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string clientsfileTXT):aiplanesfile(),clientsfile() {
     aiplanesfile.open(aiplanesfileTXT);
@@ -104,6 +105,16 @@ void AirplaneCompany::writeClientsFile(std::string clientsfileTXT) {
         }
         f << id << ':' << x.getName() << std::endl;
     }
+    std::stringstream buffer;                             // Store contents in a std::string
+    buffer << f.rdbuf();
+    std::string contents = buffer.str();
+
+    f.close();
+    contents.pop_back();                                  // Remove last character
+
+
+    std::ofstream fileOut( clientsfileTXT , std::ios::trunc); // Open for writing (while also clearing file)
+    fileOut << contents;
     f.close();
 }
 
@@ -128,6 +139,16 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
         flights.pop_back();
         f << x.getType() << '-' << x.getPlate() << '-' << std::to_string(x.getSeats()) << '-' << flights << std::endl;
     }
+    std::stringstream buffer;                             // Store contents in a std::string
+    buffer << f.rdbuf();
+    std::string contents = buffer.str();
+
+    f.close();
+    contents.pop_back();                                  // Remove last character
+
+
+    std::ofstream fileOut( airplanesfileTXT , std::ios::trunc); // Open for writing (while also clearing file)
+    fileOut << contents;
     f.close();
 }
 
@@ -151,6 +172,16 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
         std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
         f << a << std::endl;
     }
+    std::stringstream buffer;                             // Store contents in a std::string
+    buffer << f.rdbuf();
+    std::string contents = buffer.str();
+
+    f.close();
+    contents.pop_back();                                  // Remove last character
+
+
+    std::ofstream fileOut( flightsTXT , std::ios::trunc); // Open for writing (while also clearing file)
+    fileOut << contents;
     f.close();
 }
 
@@ -158,4 +189,8 @@ void AirplaneCompany::dump() {
     writeClientsFile("clientes.txt");
     writeFlightsFile("flights.txt");
     writeAirplanesFile("airplanes.txt");
+}
+
+void AirplaneCompany::getOptions() {
+
 }

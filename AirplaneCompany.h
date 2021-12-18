@@ -25,6 +25,7 @@ private:
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
+    void getOptions();
 
 };
 
