@@ -9,11 +9,11 @@
 class Transport{
 private:
     std::string type;
+    std::string destiny;
     int distance;
     std::string time;
 public:
-    Transport(std::string type, int distance, std::string time);
-    Transport();
+    Transport(std::string destiny,std::string type,std::string time, int distance);
     std::string getType();
     void setType(std::string type);
     void setDistance(int distance);
@@ -22,5 +22,6 @@ public:
     std::string getTime();
     bool operator<(const Transport &t1) const;
     bool operator==(const Transport &t1) const;
+    friend std::ostream& operator<<(std::ostream &f, const Transport &p);
 };
 #endif //PROJ_DE_AED_TRANSPORT_H

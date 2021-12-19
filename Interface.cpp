@@ -6,6 +6,7 @@
 #include <sstream>
 #include "Interface.h"
 #include "AirplaneCompany.h"
+#include "Timetable.h"
 
 #ifdef _WIN32
 #define CLEAR "cls"
@@ -74,7 +75,7 @@ void Interface::iniciate() {
         }else if(flag ==1){
             TYPE = AIRPLANECOMPANY;
         }
-        else if(flag ==3){
+        else if(flag ==2){
             TYPE = TIMETABLESPUBLIC;
         }else
             break;
@@ -101,5 +102,7 @@ void Interface::loginAsCompany(){
 }
 
 void Interface::loginTransports() {
-
+    Timetable t("timetable.txt");
+    t.print();
 }
+

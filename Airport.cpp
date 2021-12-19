@@ -4,7 +4,7 @@
 
 #include "Airport.h"
 
-std::string Airport::getName() {
+std::string Airport::getName() const{
     return name;
 }
 
@@ -12,7 +12,7 @@ void Airport::setName(std::string name) {
     this->name=name;
 }
 
-BST<Transport> Airport::getTransports() {
+BST<Transport>& Airport::getTransports() {
     return transports;
 }
 
@@ -28,10 +28,21 @@ bool Airport::removeTransport(Transport t1) {
     return transports.remove(t1);
 }
 
-bool Airport::operator<(Airport &p) {
+bool Airport::operator<(const Airport &p)const  {
     return name<p.getName();
 }
 
-bool Airport::operator==(Airport &p) {
+bool Airport::operator==(const Airport &p) const {
     return name == p.getName();
+}
+
+Airport::Airport() {
+    name = "";
+}
+
+ostream &operator<<(ostream &f, const Airport &p) {
+    for(iteratorBST<Transport> it = p.transports.begin();it!=p.transports.end();it++){
+        f<< "From: " << p.name << *it << endl;
+    }
+    return f;
 }

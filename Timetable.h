@@ -11,7 +11,13 @@
 
 class Timetable {
 private:
-    BST<Airport> airportBst;
+    BST<Airport> airportBst = BST<Airport>(Airport());
+    void SplitString(string s, vector<std::string> &v, char c);
+public:
+    Timetable(std::string text);
+    void print();
+
+
 };
 
 

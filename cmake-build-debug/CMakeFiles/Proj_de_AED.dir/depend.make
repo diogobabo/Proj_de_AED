@@ -28,12 +28,16 @@ CMakeFiles/Proj_de_AED.dir/Flight.cpp.obj: ../Passenger.h
 
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Airplane.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../AirplaneCompany.h
+CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Airport.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Flight.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Interface.cpp
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Interface.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Luggage.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Maintenance.h
 CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Passenger.h
+CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Timetable.h
+CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../Transport.h
+CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj: ../bst.h
 
 CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj: ../Luggage.cpp
 CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj: ../Luggage.h

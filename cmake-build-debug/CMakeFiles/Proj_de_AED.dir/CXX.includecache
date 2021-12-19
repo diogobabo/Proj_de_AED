@@ -6,93 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
-string
--
-list
--
-queue
--
-Flight.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
+C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp
 Maintenance.h
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.cpp
-AirplaneCompany.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
-iostream
--
-algorithm
--
-sstream
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/AirplaneCompany.h
-vector
--
-fstream
--
-Airplane.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airplane.h
-Passenger.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.cpp
-Airport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h
-string
--
-bst.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h
-Transport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Flight.h
-string
--
-list
--
-vector
--
-Passenger.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
-
 C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.h
 string
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.h
-string
--
-Luggage.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.h
-list
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Timetable.cpp
-Timetable.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Timetable.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Timetable.h
-bst.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h
-Airport.h
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Airport.h
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.h
-string
--
-
-C:/Users/Diogo Babo/Desktop/Proj_de_AED/bst.h
-iostream
--
-stack
--
-queue
 -
 

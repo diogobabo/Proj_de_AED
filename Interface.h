@@ -6,6 +6,8 @@
 #define PROJ_DE_AED_INTERFACE_H
 
 
+#include <vector>
+
 class Interface {
 private:
     enum EntryType {AIRPLANECOMPANY, TIMETABLESPUBLIC};
@@ -17,6 +19,7 @@ private:
     void loginTransports();
 public:
     void iniciate();
+
 };
 
 

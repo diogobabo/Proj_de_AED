@@ -23,6 +23,7 @@ public:
     Airplane(std::string plate,std::string type,int seatsAvailable);
     Airplane(std::string plate);
     std::string getPlate()const;
+    void setMaintenanceNotDone(std::queue<Maintenance> temp);
     int getSeats();
     Flight getNextFlight();
     void addFligth(Flight flight);

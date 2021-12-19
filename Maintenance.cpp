@@ -32,3 +32,12 @@ std::string Maintenance::getMaintenanceInfo() {
         return(Date + '/' + Type + '-' + Employee);
     }
 }
+
+std::string Maintenance::getType() {
+    return Type;
+}
+
+bool Maintenance::setMaintenaceDone(std::string Employee) {
+    this->Done = true;
+    this->Employee = Employee;
+}

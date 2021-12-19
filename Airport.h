@@ -11,19 +11,20 @@
 class Airport{
 private:
     std::string name;
-    BST<Transport> transports = BST<Transport>(Transport("0",0,"0"));
+    BST<Transport> transports = BST<Transport>(Transport("0","0","0",0));
 
 public:
     Airport(std::string name);
 
-    std::string getName();
+    std::string getName()const;
     void setName(std::string name);
-    BST<Transport> getTransports();
+    BST<Transport>& getTransports();
     void addTransport(Transport t1);
     bool removeTransport(Transport t1);
-    bool operator<(Airport &p);
-    bool operator==(Airport &p);
-
+    bool operator<(const Airport &p)const;
+    bool operator==(const Airport &p)const;
+    friend ostream& operator<<(ostream &f, const Airport &p);
+    Airport();
 };
 
 #endif //PROJ_DE_AED_AIRPORT_H

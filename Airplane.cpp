@@ -58,4 +58,8 @@ bool Airplane::operator<(const Airplane &a) const {
     return plate<a.getPlate();
 }
 
+void Airplane::setMaintenanceNotDone(std::queue<Maintenance> temp) {
+    this->maintenanceToBeDone = temp;
+}
+
 

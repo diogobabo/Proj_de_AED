@@ -22,6 +22,8 @@ public:
     std::string getDate();
 
     std::string getMaintenanceInfo();
+
+    std::string getType();
 };
 
 

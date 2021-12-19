@@ -35,7 +35,8 @@ bool Transport::operator<(const Transport &t1) const {
     return time < t1.time;
 }
 
-Transport::Transport(std::string type, int distance, std::string time) {
+Transport::Transport(std::string destiny, std::string type,  std::string time, int distance) {
+    this->destiny = destiny;
     this->type=type;
     this->distance=distance;
     this->time=time;
@@ -46,4 +47,10 @@ bool Transport::operator==(const Transport &t1) const {
         return true;
     }
     return false;
+}
+
+std::ostream &operator<<(std::ostream &f, const Transport &p) {
+    std::string s = " distancing " + std::to_string(p.distance) + " km" +" to " + p.destiny + " by "+ p.type + " at "+p.time + " (hh:mm) ";
+    f<<s;
+    return f;
 }
