@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Maintenance.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Maintenance.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Passenger.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Passenger.cpp.obj"
-  "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Ticket.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj"
+  "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Timetable.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Timetable.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/Transport.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj"
   "C:/Users/Diogo Babo/Desktop/Proj_de_AED/main.cpp" "C:/Users/Diogo Babo/Desktop/Proj_de_AED/cmake-build-release-visual-studio/CMakeFiles/Proj_de_AED.dir/main.cpp.obj"
   )

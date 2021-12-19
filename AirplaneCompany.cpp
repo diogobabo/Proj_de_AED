@@ -578,7 +578,8 @@ void AirplaneCompany::flightData() {
 void AirplaneCompany::buyTicket() {
     bool flag;
     int x;
-    std::cout << "CLIENT ID :";
+    int numL;
+    std::cout << "CLIENT ID :" << std::endl;
     std::cin >> x;
     if(std::cin.eof()){
         return;
@@ -588,6 +589,14 @@ void AirplaneCompany::buyTicket() {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;
         std::cin >> x;
+    }
+    std::cout << "NUMBER OF BAGGAGES:" << std::endl;
+    std::cin >> numL;
+    while(!std::cin || x > 1000) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> numL;
     }
     std::string plate;
     std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
@@ -610,17 +619,33 @@ void AirplaneCompany::buyTicket() {
                 if(it2.getPlate() == plate){
                     for(auto &it3 : it2.getFlights()){
                         if(it3.getFlightID() == y){
+                            Luggage l(y,numL);
+                            for(auto it = it3.getPassengersId().begin(); it != it3.getPassengersId().end(); it++) {
+                                if(*it == x) {
+                                    if(numL <= 0) {
+                                        return;
+                                    }
+                                    it1.addLuggage(l);
+                                    return;
+                                }
+                            }
+                            it1.addLuggage(l);
                             it3.addPassenger(it1);
                             std::find(allFlights.begin(),allFlights.end(),it3)->addPassenger(it1);
                             std::cout << "ADDED" << std::endl;
                             return;
                         }
                     }
+                    std::cout << "COULDNT FIND A FLIGHT MATCHING THE PLATE" << std::endl;
+                    return;
                 }
             }
+            std::cout << "COULDNT THE PLATE" << std::endl;
+            return;
         }
     }
-    std::cout << "COULD NOT ADD" << std::endl;
+    std::cout << "COULDNT FIND THE CLIENT" << std::endl;
+    return;
 
 }
 void AirplaneCompany::writeBaggageFile(std::string baggageTXT) {

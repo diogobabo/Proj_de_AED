@@ -21,6 +21,8 @@ public:
     BST<Transport> getTransports();
     void addTransport(Transport t1);
     bool removeTransport(Transport t1);
+    bool operator<(Airport &p);
+    bool operator==(Airport &p);
 
 };
 

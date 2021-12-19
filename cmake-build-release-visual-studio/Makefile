@@ -343,32 +343,32 @@ Passenger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Passenger.cpp.s
 .PHONY : Passenger.cpp.s
 
-Ticket.obj: Ticket.cpp.obj
+Timetable.obj: Timetable.cpp.obj
 
-.PHONY : Ticket.obj
+.PHONY : Timetable.obj
 
 # target to build an object file
-Ticket.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Ticket.cpp.obj
-.PHONY : Ticket.cpp.obj
+Timetable.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Timetable.cpp.obj
+.PHONY : Timetable.cpp.obj
 
-Ticket.i: Ticket.cpp.i
+Timetable.i: Timetable.cpp.i
 
-.PHONY : Ticket.i
+.PHONY : Timetable.i
 
 # target to preprocess a source file
-Ticket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Ticket.cpp.i
-.PHONY : Ticket.cpp.i
+Timetable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Timetable.cpp.i
+.PHONY : Timetable.cpp.i
 
-Ticket.s: Ticket.cpp.s
+Timetable.s: Timetable.cpp.s
 
-.PHONY : Ticket.s
+.PHONY : Timetable.s
 
 # target to generate assembly for a file
-Ticket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Ticket.cpp.s
-.PHONY : Ticket.cpp.s
+Timetable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Proj_de_AED.dir\Timetable.cpp.s
+.PHONY : Timetable.cpp.s
 
 Transport.obj: Transport.cpp.obj
 
@@ -457,9 +457,9 @@ help:
 	@echo ... Passenger.obj
 	@echo ... Passenger.i
 	@echo ... Passenger.s
-	@echo ... Ticket.obj
-	@echo ... Ticket.i
-	@echo ... Ticket.s
+	@echo ... Timetable.obj
+	@echo ... Timetable.i
+	@echo ... Timetable.s
 	@echo ... Transport.obj
 	@echo ... Transport.i
 	@echo ... Transport.s

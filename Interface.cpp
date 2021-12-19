@@ -90,7 +90,7 @@ void Interface::login() {
         loginAsCompany();
     }
     else if(TYPE == TIMETABLESPUBLIC){
-
+        loginTransports();
     }
 
 }
@@ -100,6 +100,6 @@ void Interface::loginAsCompany(){
     company.dump();
 }
 
-void Interface::povoarVoos() {
+void Interface::loginTransports() {
 
 }

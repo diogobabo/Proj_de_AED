@@ -13,8 +13,8 @@ private:
     void login();
     int menuCall();
     bool isNumber(const std::string &s) const;
-    void povoarVoos();
     void loginAsCompany();
+    void loginTransports();
 public:
     void iniciate();
 };

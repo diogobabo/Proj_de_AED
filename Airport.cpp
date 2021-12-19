@@ -27,3 +27,11 @@ Airport::Airport(std::string name) {
 bool Airport::removeTransport(Transport t1) {
     return transports.remove(t1);
 }
+
+bool Airport::operator<(Airport &p) {
+    return name<p.getName();
+}
+
+bool Airport::operator==(Airport &p) {
+    return name == p.getName();
+}
