@@ -206,18 +206,18 @@ CMakeFiles/Proj_de_AED.dir/Ticket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Ticket.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Ticket.cpp" -o CMakeFiles\Proj_de_AED.dir\Ticket.cpp.s
 
-CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
-CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj: ../luggage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-mingw\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\luggage.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\luggage.cpp"
+CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj: CMakeFiles/Proj_de_AED.dir/flags.make
+CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj: ../Luggage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Diogo Babo\Desktop\Proj_de_AED\cmake-build-release-mingw\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj -c "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp"
 
-CMakeFiles/Proj_de_AED.dir/luggage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/luggage.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\luggage.cpp" > CMakeFiles\Proj_de_AED.dir\luggage.cpp.i
+CMakeFiles/Proj_de_AED.dir/Luggage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proj_de_AED.dir/Luggage.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp" > CMakeFiles\Proj_de_AED.dir\Luggage.cpp.i
 
-CMakeFiles/Proj_de_AED.dir/luggage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/luggage.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\luggage.cpp" -o CMakeFiles\Proj_de_AED.dir\luggage.cpp.s
+CMakeFiles/Proj_de_AED.dir/Luggage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proj_de_AED.dir/Luggage.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Diogo Babo\Desktop\Proj_de_AED\Luggage.cpp" -o CMakeFiles\Proj_de_AED.dir\Luggage.cpp.s
 
 # Object files for target Proj_de_AED
 Proj_de_AED_OBJECTS = \
@@ -231,7 +231,7 @@ Proj_de_AED_OBJECTS = \
 "CMakeFiles/Proj_de_AED.dir/Airport.cpp.obj" \
 "CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj" \
 "CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj" \
-"CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj"
+"CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj"
 
 # External object files for target Proj_de_AED
 Proj_de_AED_EXTERNAL_OBJECTS =
@@ -246,7 +246,7 @@ Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Interface.cpp.obj
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Airport.cpp.obj
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Transport.cpp.obj
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Ticket.cpp.obj
-Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj
+Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/build.make
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/linklibs.rsp
 Proj_de_AED.exe: CMakeFiles/Proj_de_AED.dir/objects1.rsp

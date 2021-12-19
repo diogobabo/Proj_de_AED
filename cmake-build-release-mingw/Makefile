@@ -277,6 +277,33 @@ Interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Interface.cpp.s
 .PHONY : Interface.cpp.s
 
+Luggage.obj: Luggage.cpp.obj
+
+.PHONY : Luggage.obj
+
+# target to build an object file
+Luggage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Luggage.cpp.obj
+.PHONY : Luggage.cpp.obj
+
+Luggage.i: Luggage.cpp.i
+
+.PHONY : Luggage.i
+
+# target to preprocess a source file
+Luggage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Luggage.cpp.i
+.PHONY : Luggage.cpp.i
+
+Luggage.s: Luggage.cpp.s
+
+.PHONY : Luggage.s
+
+# target to generate assembly for a file
+Luggage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Luggage.cpp.s
+.PHONY : Luggage.cpp.s
+
 Maintenance.obj: Maintenance.cpp.obj
 
 .PHONY : Maintenance.obj
@@ -385,33 +412,6 @@ Transport.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/Transport.cpp.s
 .PHONY : Transport.cpp.s
 
-luggage.obj: luggage.cpp.obj
-
-.PHONY : luggage.obj
-
-# target to build an object file
-luggage.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.obj
-.PHONY : luggage.cpp.obj
-
-luggage.i: luggage.cpp.i
-
-.PHONY : luggage.i
-
-# target to preprocess a source file
-luggage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.i
-.PHONY : luggage.cpp.i
-
-luggage.s: luggage.cpp.s
-
-.PHONY : luggage.s
-
-# target to generate assembly for a file
-luggage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proj_de_AED.dir\build.make CMakeFiles/Proj_de_AED.dir/luggage.cpp.s
-.PHONY : luggage.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -463,6 +463,9 @@ help:
 	@echo ... Interface.obj
 	@echo ... Interface.i
 	@echo ... Interface.s
+	@echo ... Luggage.obj
+	@echo ... Luggage.i
+	@echo ... Luggage.s
 	@echo ... Maintenance.obj
 	@echo ... Maintenance.i
 	@echo ... Maintenance.s
@@ -475,9 +478,6 @@ help:
 	@echo ... Transport.obj
 	@echo ... Transport.i
 	@echo ... Transport.s
-	@echo ... luggage.obj
-	@echo ... luggage.i
-	@echo ... luggage.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

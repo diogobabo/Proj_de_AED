@@ -197,6 +197,11 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
             }
             clients += idPass + ',';
         }
+        if(clients.length() == 0){
+            std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny();
+            f << a << std::endl;
+            continue;
+        }
         clients.pop_back();
         std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
         f << a << std::endl;
@@ -225,7 +230,7 @@ void AirplaneCompany::getOptions() {
     int number = 50;
 
     while (flag) {          //checks the input
-        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl << "0) BACK"<< std::endl;
+        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE"<< std::endl<< "6) FLIGHT MANAGEMENT" << std::endl << "0) BACK"<< std::endl;
 
         std::string x;
 
@@ -246,7 +251,7 @@ void AirplaneCompany::getOptions() {
 
             ss >> number;
 
-            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5) {
+            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5|| number == 6) {
                 flag = false;
             } else {
                 std::system(CLEAR);
@@ -274,6 +279,10 @@ void AirplaneCompany::getOptions() {
             }
             else if(number == 5){
 
+            }
+            else if(number == 6){
+                flightData();
+                flag = true;
             }
         }
     }
@@ -304,7 +313,12 @@ void AirplaneCompany::addClient() {
         }
     }
 }
-
+bool AirplaneCompany::sortByDate(Flight &f1, Flight &f2) {
+    return f1.getStartDate()<f2.getStartDate();
+}
+bool AirplaneCompany::sortByTime(Flight &f1, Flight &f2) {
+    return f1.getDuration()<f2.getDuration();
+}
 void AirplaneCompany::airplanesInfo() {
     bool flag;
     int x;
@@ -335,11 +349,24 @@ void AirplaneCompany::airplanesInfo() {
         }
     }
     else if(x == 2) {
-        for(auto x : planes) {
-            for(auto y : x.getFlights()) {
-                std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
-            }
+        int x;
+        std::cout << "1) SORT FLIGHTS BY DATE" << std::endl << "2) SORT FLIGHTS BY TIME" << std::endl;
+        std::cin >> x;
+        while(!std::cin || x > 2) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, please try again: " << std::endl;
+            std::cin >> x;
         }
+        if(x == 1){
+            std::sort(allFlights.begin(),allFlights.end(),sortByDate);
+        } else{
+            std::sort(allFlights.begin(),allFlights.end(),sortByTime);
+        }
+        for(auto y : allFlights) {
+            std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+        }
+
     }
     return;
 }
@@ -363,7 +390,6 @@ void AirplaneCompany::checkInputStringFlight(std::string &x) {
         std::cin >> x;
     }
 }
-
 void AirplaneCompany::addPlane() {
     std::string plate,type;
     int seats;
@@ -399,6 +425,7 @@ void AirplaneCompany::removePlane() {
 }
 
 void AirplaneCompany::removeClient() {
+    bool flag = true;
     int id;
     std::cout << "TYPE THE ID OF THE CLIENT YOU WANT TO REMOVE" << std::endl;
     std::cin >> id;
@@ -411,7 +438,12 @@ void AirplaneCompany::removeClient() {
     for(auto it = clients.begin(); it != clients.end(); it++) {
         if(it->getId() == id) {
             it = clients.erase(it);
+            flag = false;
+            break;
         }
+    }
+    if(flag){
+            std::cout << "CLIENT DOES NOT EXIST" << std::endl;
     }
 }
 
@@ -422,6 +454,7 @@ void AirplaneCompany::addFlight() {
     std::string date;
     std::string duration;
     std::string plate;
+    bool found = false;
     for(auto x : planes) {
         for(auto y : x.getFlights()) {
             if(y.getFlightID() > max) {
@@ -441,21 +474,78 @@ void AirplaneCompany::addFlight() {
     std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
     checkInputStringPlane(plate);
     std::vector<std::string>p;
-    Flight f1(id, origin , date, duration,destiny,p);
-    allFlights.push_back(f1);
+    Flight f1(id, date, duration , origin , destiny,p);
 
     for(auto &x: planes) {
         if(x.getPlate() == plate) {
+            found = true;
             x.addFligth(f1);
+            break;
         }
+    }
+    if(found) {
+        allFlights.push_back(f1);
+    }
+    if(!found) {
+        std::cout << "THE PLANE REQUEST DOESNT EXIST!" << std::endl;
     }
 }
 
 void AirplaneCompany::removeFlight() {
-
+    bool found = false;
+    int id;
+    std::string plate;
+    std::cout << "TYPE THE ID OF THE FLIGHT" << std::endl;
+    std::cin >> id;
+    while(!std::cin || id > 2) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> id;
+    }
+    std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
+    checkInputStringPlane(plate);
+    for(auto it = planes.begin(); it != planes.end(); it++) {
+        for(auto jt = it->getFlights().begin(); jt != it->getFlights().end(); jt++) {
+            if(it->getPlate() == plate) {
+                if(jt->getFlightID() == id) {
+                    jt = it->getFlights().erase(jt);
+                    found = true;
+                    break;
+                }
+            }
+        }
+    }
+    if(!found) {
+        std::cout << "THE REQUEST FLIGHT DOES NOT EXIST!" << std::endl;
+        return;
+    }
+    for(auto it = allFlights.begin(); it != allFlights.end(); it++) {
+        if(it->getFlightID() == id) {
+            it = allFlights.erase(it);
+            break;
+        }
+    }
+    return;
 }
 
-
-
+void AirplaneCompany::flightData() {
+    bool found = false;
+    int id;
+    std::string plate;
+    std::cout << "1) REMOVE FLIGHT" << std::endl<< "2) ADD FLIGHT"<< std::endl;
+    std::cin >> id;
+    while(!std::cin || id > 2) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> id;
+    }
+    if(id == 1){
+        removeFlight();
+    }else if(id == 2){
+        addFlight();
+    }
+}
 
 

@@ -12,6 +12,7 @@
 
 class Flight {
 private:
+
     int FlightNumber;
     std::string StartDate;// format yyyy:mm:dd:hours:minutes
     std::string Duration; // format hours:minutes
@@ -20,16 +21,17 @@ private:
     std::list<int> passengersid;
 public:
     Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny,std::vector<std::string> passengersid);
+    Flight(int number);
     void setDate(std::string date);
     void setDuration(std::string Duration);
-    int getFlightID();
+    int getFlightID() const;
     std::string getDuration();
     std::string getOrigin();
     std::string getStartDate();
     std::string getDestiny();
     std::list<int> getPassengersId();
     bool operator <(Flight &f);
-    bool operator ==(Flight &f);
+    bool operator ==(const Flight &f) const;
 };
 
 

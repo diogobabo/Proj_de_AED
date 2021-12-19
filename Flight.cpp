@@ -59,6 +59,3 @@ Flight::Flight(int number) {
     this->FlightNumber = number;
 }
 
-Flight::Flight() {
-
-}

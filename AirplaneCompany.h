@@ -37,6 +37,9 @@ private:
     void removeClient();
     void addFlight();
     void removeFlight();
+    static bool sortByDate(Flight &f1,Flight &f2) ;
+    static bool sortByTime(Flight &f1,Flight &f2) ;
+    void flightData();
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();

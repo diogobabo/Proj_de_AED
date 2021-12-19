@@ -15,7 +15,7 @@ private:
     Flight fi;
     int numLuggage;
 public:
-    Luggage(Passenger p,Flight f);
+    Luggage(Passenger pi, Flight fi);
 
 };
 

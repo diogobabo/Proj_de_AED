@@ -4,7 +4,7 @@
 
 #include "Luggage.h"
 
-Luggage::Luggage(Passenger p, Flight f){
-    this->fi = f;
-    this->pi = p;
+
+Luggage::Luggage(Passenger pi, Flight fi):pi(pi),fi(fi) {
+
 }
