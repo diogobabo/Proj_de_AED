@@ -354,6 +354,16 @@ void AirplaneCompany::checkInputStringPlane(std::string &x) {
     }
 }
 
+void AirplaneCompany::checkInputStringFlight(std::string &x) {
+    std::cin >> x;
+    while(std::cin.fail() || isNumber(x)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> x;
+    }
+}
+
 void AirplaneCompany::addPlane() {
     std::string plate,type;
     int seats;
@@ -404,6 +414,48 @@ void AirplaneCompany::removeClient() {
         }
     }
 }
+
+void AirplaneCompany::addFlight() {
+    int max = INT_MIN;
+    std::string origin;
+    std::string destiny;
+    std::string date;
+    std::string duration;
+    std::string plate;
+    for(auto x : planes) {
+        for(auto y : x.getFlights()) {
+            if(y.getFlightID() > max) {
+                max = y.getFlightID();
+            }
+        }
+    }
+    int id = max + 1;
+    std::cout << "TYPE THE ORIGIN OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(origin);
+    std::cout << "TYPE THE DESTINY OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(destiny);
+    std::cout << "TYPE THE DATE OF THE DEPARTURE OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(date);
+    std::cout << "TYPE THE DURATION OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(duration);
+    std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
+    checkInputStringPlane(plate);
+    std::vector<std::string>p;
+    Flight f1(id, origin , date, duration,destiny,p);
+    allFlights.push_back(f1);
+
+    for(auto &x: planes) {
+        if(x.getPlate() == plate) {
+            x.addFligth(f1);
+        }
+    }
+}
+
+void AirplaneCompany::removeFlight() {
+
+}
+
+
 
 
 

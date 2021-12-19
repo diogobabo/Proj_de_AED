@@ -30,9 +30,6 @@ public:
     std::list<int> getPassengersId();
     bool operator <(Flight &f);
     bool operator ==(Flight &f);
-
-
-
 };
 
 
