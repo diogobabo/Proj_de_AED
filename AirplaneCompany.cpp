@@ -377,7 +377,6 @@ void AirplaneCompany::addPlane() {
 
 void AirplaneCompany::removePlane() {
     std::string plate,type;
-    int seats;
     std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
     checkInputStringPlane(type);
     std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
@@ -385,6 +384,23 @@ void AirplaneCompany::removePlane() {
     for(auto it = planes.begin(); it != planes.end(); it++) {
         if(it->getPlate() == plate && it->getType() == type) {
             it = planes.erase(it);
+        }
+    }
+}
+
+void AirplaneCompany::removeClient() {
+    int id;
+    std::cout << "TYPE THE ID OF THE CLIENT YOU WANT TO REMOVE" << std::endl;
+    std::cin >> id;
+    while(!std::cin) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> id;
+    }
+    for(auto it = clients.begin(); it != clients.end(); it++) {
+        if(it->getId() == id) {
+            it = clients.erase(it);
         }
     }
 }
