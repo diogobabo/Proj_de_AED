@@ -27,16 +27,10 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
     std::sort(clients.begin(),clients.end());
     std::fstream flightFile;
     flightFile.open("flights.txt");
-    std::fstream LFile;
-    flightFile.open("luggage.txt");
+
     if(!flightFile.is_open()){
         throw "flightFile";
     }
-    if(!LFile.is_open()){
-        throw "LFileFile";
-    }
-    std::vector<Luggage>l;
-
     while(std::getline(flightFile,s)){
         if(s == "/n"){
             continue;
@@ -51,13 +45,7 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         allFlights.push_back(f);
 
     }
-    while (std::getline(LFile,s)){
-        Passenger p(s.substr(s.find('-')),"");
-        Flight f(std::stoi(s.substr(s.find('-'))));
-        Passenger a = *std::find(clients.begin(),clients.end(),p);
-        Flight fi = *std::find(allFlights.begin(),allFlights.end(),f);
-        Luggage L(a,fi);
-    }
+
     while(std::getline(aiplanesfile,s)){
         bool flag = true;
         if(s == "/n"){
@@ -69,9 +57,11 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         std::string rest;
         if(s.length()<15){
             rest = s;
+            Airplane p(plate,type,std::stoi(seats));
+            planes.push_back(p);
+            continue;
         }else
             rest = s.substr(14);
-
         Airplane p(plate,type,std::stoi(seats));
         if(rest.find('-') == std::string::npos)
             flag = false;
@@ -235,7 +225,7 @@ void AirplaneCompany::getOptions() {
     int number = 50;
 
     while (flag) {          //checks the input
-        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl<<"6) FLIGHT LOGISTICS" << std::endl << "0) BACK"<< std::endl;
+        std::cout << "1) ADD AIRPLANE" << std::endl << "2) ADD NEW CLIENT" << std::endl << "3) BUY PLANE TICKET FOR CLIENT" << std::endl << "4) AIRPLANES INFO" << std::endl<< "5) AIRPLANES CHANGE" << std::endl << "0) BACK"<< std::endl;
 
         std::string x;
 
@@ -256,7 +246,7 @@ void AirplaneCompany::getOptions() {
 
             ss >> number;
 
-            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5|| number == 6) {
+            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4|| number == 5) {
                 flag = false;
             } else {
                 std::system(CLEAR);
@@ -320,19 +310,17 @@ void AirplaneCompany::airplanesInfo() {
     int x;
     std::cout << "1) CHECK FLIGHTS OF A AIRPLANE" << std::endl << "2) SHOW ALL FLIGHTS" << std::endl;
     std::cin >> x;
-
-    while (!std::cin || !(std::cin.peek() == '\n')  || x > 4){
+    while(!std::cin || x > 2) {
         std::cin.clear();
-        std::cin.ignore(9999, '\n');
-        std::cout << "Invalid input! Try again: ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
         std::cin >> x;
     }
     if(x == 1) {
         bool found = false;
         std::string plate;
         std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
-        std::cin >> plate;
-
+        checkInputStringPlane(plate);
         for(auto x : planes) {
             if(x.getPlate() == plate) {
                 found = true;
@@ -346,7 +334,7 @@ void AirplaneCompany::airplanesInfo() {
             std::cout << "There are no flights for that plane!" << std::endl;
         }
     }
-    if(x == 2) {
+    else if(x == 2) {
         for(auto x : planes) {
             for(auto y : x.getFlights()) {
                 std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
@@ -356,28 +344,118 @@ void AirplaneCompany::airplanesInfo() {
     return;
 }
 
+void AirplaneCompany::checkInputStringPlane(std::string &x) {
+    std::cin >> x;
+    while(std::cin.fail() || x.length() != 4 || isNumber(x)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> x;
+    }
+}
+
+void AirplaneCompany::checkInputStringFlight(std::string &x) {
+    std::cin >> x;
+    while(std::cin.fail() || isNumber(x)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> x;
+    }
+}
+
 void AirplaneCompany::addPlane() {
     std::string plate,type;
     int seats;
-    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
-    std::cin >> plate;
     std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
-    std::cin >> type;
+    checkInputStringPlane(type);
+    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+    checkInputStringPlane(plate);
     std::cout << "TYPE THE NUMBER OF SEATS OF THE PLANE" << std::endl;
     std::cin >> seats;
+    while(!std::cin || std::to_string(seats).size() != 3) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> seats;
+    }
     Airplane plane(plate,type,seats);
     planes.push_back(plane);
     std::cout << "Plane added SUCCESSFULLY!" << std::endl;
     return;
 }
 
-void AirplaneCompany::buyTicket() {
+void AirplaneCompany::removePlane() {
+    std::string plate,type;
+    std::cout << "TYPE THE TYPE OF THE PLANE" << std::endl;
+    checkInputStringPlane(type);
+    std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+    checkInputStringPlane(plate);
+    for(auto it = planes.begin(); it != planes.end(); it++) {
+        if(it->getPlate() == plate && it->getType() == type) {
+            it = planes.erase(it);
+        }
+    }
+}
+
+void AirplaneCompany::removeClient() {
+    int id;
+    std::cout << "TYPE THE ID OF THE CLIENT YOU WANT TO REMOVE" << std::endl;
+    std::cin >> id;
+    while(!std::cin) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> id;
+    }
+    for(auto it = clients.begin(); it != clients.end(); it++) {
+        if(it->getId() == id) {
+            it = clients.erase(it);
+        }
+    }
+}
+
+void AirplaneCompany::addFlight() {
+    int max = INT_MIN;
+    std::string origin;
+    std::string destiny;
+    std::string date;
+    std::string duration;
+    std::string plate;
+    for(auto x : planes) {
+        for(auto y : x.getFlights()) {
+            if(y.getFlightID() > max) {
+                max = y.getFlightID();
+            }
+        }
+    }
+    int id = max + 1;
+    std::cout << "TYPE THE ORIGIN OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(origin);
+    std::cout << "TYPE THE DESTINY OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(destiny);
+    std::cout << "TYPE THE DATE OF THE DEPARTURE OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(date);
+    std::cout << "TYPE THE DURATION OF THE FLIGHT" << std::endl;
+    checkInputStringFlight(duration);
+    std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
+    checkInputStringPlane(plate);
+    std::vector<std::string>p;
+    Flight f1(id, origin , date, duration,destiny,p);
+    allFlights.push_back(f1);
+
+    for(auto &x: planes) {
+        if(x.getPlate() == plate) {
+            x.addFligth(f1);
+        }
+    }
+}
+
+void AirplaneCompany::removeFlight() {
 
 }
 
-void AirplaneCompany::logistics() {
 
-}
 
 
 

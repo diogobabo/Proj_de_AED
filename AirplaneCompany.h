@@ -15,7 +15,6 @@
 #include <fstream>
 #include "Airplane.h"
 #include "Passenger.h"
-#include "Luggage.h"
 
 class AirplaneCompany {
 private:
@@ -32,8 +31,12 @@ private:
     void airplanesInfo();
     void addClient();
     void addPlane();
-    void buyTicket();
-    void logistics();
+    void checkInputStringPlane(std::string &x);
+    void checkInputStringFlight(std::string &x);
+    void removePlane();
+    void removeClient();
+    void addFlight();
+    void removeFlight();
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
