@@ -5,6 +5,24 @@
 #include "Luggage.h"
 
 
-Luggage::Luggage(Passenger pi, Flight fi):pi(pi),fi(fi) {
 
+Luggage::Luggage(int fi,int n) {
+    this->fi = fi;
+    this->numLuggage = n;
+}
+Luggage::Luggage() {
+    this->fi = 0;
+    this->numLuggage = 0;
+}
+
+int Luggage::getNumLuggage() {
+    return numLuggage;
+}
+
+void Luggage::setNumLuggage(int numLuggage) {
+    this->numLuggage=numLuggage;
+}
+
+int Luggage::getid() {
+    return fi;
 }

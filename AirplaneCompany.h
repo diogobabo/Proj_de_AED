@@ -40,12 +40,15 @@ private:
     static bool sortByDate(Flight &f1,Flight &f2) ;
     static bool sortByTime(Flight &f1,Flight &f2) ;
     void flightData();
+    void buyTicket();
+    bool canBuyTicket(Airplane &a1);
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
     void getOptions();
 
 
+    void writeBaggageFile(std::string baggageTXT);
 };
 
 

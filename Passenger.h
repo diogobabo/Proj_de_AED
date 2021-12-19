@@ -7,11 +7,14 @@
 
 
 #include <string>
+#include "Luggage.h"
+#include <list>
 
 class Passenger {
 private:
     int id;
     std::string name;
+    std::list<Luggage> l;
 public:
     Passenger(std::string id,std::string name);
     Passenger(int id,std::string name);
@@ -22,6 +25,8 @@ public:
     std::string getName();
     bool operator <(Passenger &p);
     bool operator ==(const Passenger &p)const;
+
+    Luggage getLuggage(int fid);
 };
 
 

@@ -59,3 +59,7 @@ Flight::Flight(int number) {
     this->FlightNumber = number;
 }
 
+void Flight::addPassenger(Passenger &p) {
+    passengersid.push_back(p.getId());
+}
+

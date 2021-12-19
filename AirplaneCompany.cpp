@@ -96,6 +96,19 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         planes.push_back(p);
 
     }
+    std::fstream l;
+    l.open("luggage.txt");
+    if(!l.is_open()){
+        throw "luggage";
+    }
+
+    while(std::getline(l,s)){
+        std::string rest = s.substr(s.find('-'));
+        int pid = std::stoi(s.substr(0,s.find('-')));
+        int fid = std::stoi(rest.substr(0,s.find(':')));
+        int n = std::stoi(rest.substr(s.find(':')));
+    }
+    l.close();
     aiplanesfile.close();
     clientsfile.close();
     flightFile.close();
@@ -271,7 +284,8 @@ void AirplaneCompany::getOptions() {
                 flag = true;
             }
             else if(number == 3){
-
+                buyTicket();
+                flag = true;
             }
             else if(number == 4){
                 airplanesInfo();
@@ -287,6 +301,7 @@ void AirplaneCompany::getOptions() {
         }
     }
 }
+
 
 void AirplaneCompany::addClient() {
     bool flag = true;
@@ -443,7 +458,7 @@ void AirplaneCompany::removeClient() {
         }
     }
     if(flag){
-            std::cout << "CLIENT DOES NOT EXIST" << std::endl;
+        std::cout << "CLIENT DOES NOT EXIST" << std::endl;
     }
 }
 
@@ -467,9 +482,9 @@ void AirplaneCompany::addFlight() {
     checkInputStringFlight(origin);
     std::cout << "TYPE THE DESTINY OF THE FLIGHT" << std::endl;
     checkInputStringFlight(destiny);
-    std::cout << "TYPE THE DATE OF THE DEPARTURE OF THE FLIGHT" << std::endl;
+    std::cout << "TYPE THE DATE OF THE DEPARTURE OF THE FLIGHT (yyyy:mm:dd:hh:mm)" << std::endl;
     checkInputStringFlight(date);
-    std::cout << "TYPE THE DURATION OF THE FLIGHT" << std::endl;
+    std::cout << "TYPE THE DURATION OF THE FLIGHT (hh:mm)" << std::endl;
     checkInputStringFlight(duration);
     std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
     checkInputStringPlane(plate);
@@ -486,6 +501,7 @@ void AirplaneCompany::addFlight() {
     if(found) {
         allFlights.push_back(f1);
     }
+    std::cout << "FLIGHT ADDED SUCCESSFULLY!" << std::endl;
     if(!found) {
         std::cout << "THE PLANE REQUEST DOESNT EXIST!" << std::endl;
     }
@@ -497,7 +513,7 @@ void AirplaneCompany::removeFlight() {
     std::string plate;
     std::cout << "TYPE THE ID OF THE FLIGHT" << std::endl;
     std::cin >> id;
-    while(!std::cin || id > 2) {
+    while(!std::cin) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;
@@ -506,8 +522,8 @@ void AirplaneCompany::removeFlight() {
     std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
     checkInputStringPlane(plate);
     for(auto it = planes.begin(); it != planes.end(); it++) {
-        for(auto jt = it->getFlights().begin(); jt != it->getFlights().end(); jt++) {
-            if(it->getPlate() == plate) {
+        if(it->getPlate() == plate) {
+            for(auto jt = it->getFlights().begin(); jt != it->getFlights().end(); jt++) {
                 if(jt->getFlightID() == id) {
                     jt = it->getFlights().erase(jt);
                     found = true;
@@ -526,7 +542,7 @@ void AirplaneCompany::removeFlight() {
             break;
         }
     }
-    return;
+    std::cout << "FLIGHT REMOVED SUCCESSFULLY!" << std::endl;
 }
 
 void AirplaneCompany::flightData() {
@@ -548,4 +564,56 @@ void AirplaneCompany::flightData() {
     }
 }
 
+void AirplaneCompany::buyTicket() {
+    bool flag;
+    int x;
+    std::cout << "CLIENT ID :";
+    std::cin >> x;
+    if(std::cin.eof()){
+        return;
+    }
+    while(!std::cin || x > 1000) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> x;
+    }
+    std::string plate;
+    std::cout << "PLATE OF THE PLANE THAT IS RESPONSIBLE FOR THE FLIGHT" << std::endl;
+    checkInputStringPlane(plate);
+    int y;
+    std::cout << "FLIGHT ID :";
+    std::cin >> y;
+    if(std::cin.eof()){
+        return;
+    }
+    while(!std::cin || y > 1000) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input, please try again: " << std::endl;
+        std::cin >> y;
+    }
+    for(auto &it1 : clients ){
+        if(it1.getId() == x){
+            for(auto &it2 : planes){
+                if(it2.getPlate() == plate){
+                    for(auto &it3 : it2.getFlights()){
+                        if(it3.getFlightID() == y){
+                            it3.addPassenger(it1);
+                            std::find(allFlights.begin(),allFlights.end(),it3)->addPassenger(it1);
+                            std::cout << "ADDED" << std::endl;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    std::cout << "COULD NOT ADD" << std::endl;
+
+}
+
+bool AirplaneCompany::canBuyTicket(Airplane &a1) {
+    return false;
+}
 

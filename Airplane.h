@@ -21,16 +21,18 @@ private:
     std::list<Maintenance> maintenanceToDone;
 public:
     Airplane(std::string plate,std::string type,int seatsAvailable);
-    std::string getPlate();
+    Airplane(std::string plate);
+    std::string getPlate()const;
     int getSeats();
     Flight getNextFlight();
     void addFligth(Flight flight);
     void addMaintenance(Maintenance maintenance);
     std::list<Maintenance> getMaintenanceDone();
     std::queue<Maintenance> getMaintenanceNotDone();
-    std::list<Flight> getFlights();
-    Flight getLastFlights();
+    std::list<Flight> &getFlights();
     std::string getType();
+    bool operator ==(const Airplane &a) const;
+    bool operator <(const Airplane &a) const;
 };
 
 

@@ -2,13 +2,14 @@
 // Created by Diogo Babo on 04/12/2021.
 //
 
+#include <algorithm>
 #include "Airplane.h"
 
 void Airplane::addFligth(Flight flight) {
     flights.push_back(flight);
 }
 
-std::string Airplane::getPlate() {
+std::string Airplane::getPlate() const{
     return plate;
 }
 
@@ -16,7 +17,7 @@ int Airplane::getSeats() {
     return seats;
 }
 
-std::list<Flight> Airplane::getFlights() {
+std::list<Flight> &Airplane::getFlights() {
     return flights;
 }
 
@@ -24,6 +25,9 @@ Airplane::Airplane(std::string plate, std::string type, int seatsAvailable) {
     this->plate = plate;
     this-> type = type;
     this->seats = seatsAvailable;
+}
+Airplane::Airplane(std::string plate) {
+    this->plate = plate;
 }
 
 std::string Airplane::getType() {
@@ -45,3 +49,13 @@ std::list<Maintenance> Airplane::getMaintenanceDone() {
 std::queue<Maintenance> Airplane::getMaintenanceNotDone() {
     return maintenanceToBeDone;
 }
+
+bool Airplane::operator==(const Airplane &a) const {
+    return plate == a.getPlate();
+}
+
+bool Airplane::operator<(const Airplane &a) const {
+    return plate<a.getPlate();
+}
+
+

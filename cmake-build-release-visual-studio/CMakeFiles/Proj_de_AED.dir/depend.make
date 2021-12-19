@@ -43,6 +43,8 @@ CMakeFiles\Proj_de_AED.dir\Luggage.cpp.obj: ..\Passenger.h
 CMakeFiles\Proj_de_AED.dir\Maintenance.cpp.obj: ..\Maintenance.cpp
 CMakeFiles\Proj_de_AED.dir\Maintenance.cpp.obj: ..\Maintenance.h
 
+CMakeFiles\Proj_de_AED.dir\Passenger.cpp.obj: ..\Flight.h
+CMakeFiles\Proj_de_AED.dir\Passenger.cpp.obj: ..\Luggage.h
 CMakeFiles\Proj_de_AED.dir\Passenger.cpp.obj: ..\Passenger.cpp
 CMakeFiles\Proj_de_AED.dir\Passenger.cpp.obj: ..\Passenger.h
 

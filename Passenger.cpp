@@ -42,3 +42,14 @@ Passenger::Passenger() {
     id = 0;
     name = "";
 }
+
+Luggage Passenger::getLuggage(int fid) {
+    for(auto x:l){
+        if(x.getid() == fid){
+            return x;
+        }
+    }
+    Luggage e(fid,0);
+    return e;
+}
+

@@ -11,12 +11,14 @@
 
 class Luggage {
 private:
-    Passenger pi;
-    Flight fi;
+    int fi;
     int numLuggage;
 public:
-    Luggage(Passenger pi, Flight fi);
-
+    Luggage(int fi,int n);
+    Luggage();
+    int getNumLuggage();
+    int getid();
+    void setNumLuggage(int numLuggage);
 };
 
 

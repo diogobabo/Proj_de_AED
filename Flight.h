@@ -30,6 +30,7 @@ public:
     std::string getStartDate();
     std::string getDestiny();
     std::list<int> getPassengersId();
+    void addPassenger(Passenger &p);
     bool operator <(Flight &f);
     bool operator ==(const Flight &f) const;
 };
