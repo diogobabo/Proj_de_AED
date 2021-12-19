@@ -612,6 +612,32 @@ void AirplaneCompany::buyTicket() {
     std::cout << "COULD NOT ADD" << std::endl;
 
 }
+void AirplaneCompany::writeBaggageFile(std::string baggageTXT) {
+    std::fstream f;
+    std::string sizeLug;
+    std::string idP;
+    std::string numL;
+    f.open(baggageTXT, std::ofstream::out | std::ofstream::trunc);
+    for(auto x : allFlights) {
+        std::string idF = std::to_string(x.getFlightID());
+        while(idF.size() < 4) {
+            idF.insert(0,"0");
+        }
+        for(auto y : x.getPassengersId()) {
+            idP = std::to_string(y);
+            while(idP.size() < 4) {
+                idP.insert(0,"0");
+            }
+            for(auto w : clients) {
+                for(q : w.getLuggage(x.getFlightID())) {
+                    numL
+                }
+            }
+        }
+        f << idP << '-' << idF << ':' << sizeLug << std::endl;
+    }
+
+}
 
 bool AirplaneCompany::canBuyTicket(Airplane &a1) {
     return false;

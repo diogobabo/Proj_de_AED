@@ -5,10 +5,6 @@
 #ifndef PROJ_DE_AED_LUGGAGE_H
 #define PROJ_DE_AED_LUGGAGE_H
 
-
-#include "Passenger.h"
-#include "Flight.h"
-
 class Luggage {
 private:
     int fi;
