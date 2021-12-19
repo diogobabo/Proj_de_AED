@@ -8,7 +8,7 @@
 
 class Interface {
 private:
-    enum EntryType {AIRPLANECOMPANY, NEWCLIENT, TIMETABLESPUBLIC, ADMIN};
+    enum EntryType {AIRPLANECOMPANY, TIMETABLESPUBLIC};
     EntryType TYPE;
     void login();
     int menuCall();

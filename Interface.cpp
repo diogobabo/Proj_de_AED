@@ -32,7 +32,7 @@ int Interface::menuCall() {
 
     while (flag) {          //checks the input
         std::cout << "Login as: " << std::endl;
-        std::cout << "1) AIRPLANE COMPANY" << std::endl << "2) NEW CLIENT" << std::endl << "3) TIMETABLES PUBLIC TRANSPORTS" << std::endl << "4) ADMIN" << std::endl << "0) EXIT"<< std::endl;
+        std::cout << "1) AIRPLANE COMPANY"  << std::endl << "2) TIMETABLES PUBLIC TRANSPORTS" << std::endl << "0) EXIT"<< std::endl;
 
         std::string x;
 
@@ -53,7 +53,7 @@ int Interface::menuCall() {
 
             ss >> number;
 
-            if (number == 1 || number == 2 || number == 0 || number == 3|| number == 4) {
+            if (number == 1 || number == 2 || number == 0) {
                 flag = false;
             } else {
                 std::system(CLEAR);
@@ -74,15 +74,9 @@ void Interface::iniciate() {
         }else if(flag ==1){
             TYPE = AIRPLANECOMPANY;
         }
-        else if(flag ==2){
-            TYPE = NEWCLIENT;
-        }
         else if(flag ==3){
             TYPE = TIMETABLESPUBLIC;
-        }
-        else if(flag ==4){
-            TYPE = ADMIN;
-        } else
+        }else
             break;
         login();
     }
@@ -95,13 +89,7 @@ void Interface::login() {
     if(TYPE == AIRPLANECOMPANY){
         loginAsCompany();
     }
-    else if(TYPE == NEWCLIENT){
-
-    }
     else if(TYPE == TIMETABLESPUBLIC){
-
-    }
-    else if(TYPE == ADMIN){
 
     }
 

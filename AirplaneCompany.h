@@ -42,11 +42,11 @@ private:
     void flightData();
     void buyTicket();
     bool canBuyTicket(Airplane &a1);
+    void writeBaggageFile(std::string baggageTXT);
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
     void getOptions();
-    void writeBaggageFile(std::string baggageTXT);
 };
 
 

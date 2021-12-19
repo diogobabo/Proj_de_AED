@@ -43,7 +43,7 @@ Passenger::Passenger() {
     name = "";
 }
 
-Luggage Passenger::getLuggage(int fid) {
+Luggage& Passenger::getLuggage(int fid) {
     for(auto x:l){
         if(x.getid() == fid){
             return x;
@@ -51,5 +51,13 @@ Luggage Passenger::getLuggage(int fid) {
     }
     Luggage e(fid,0);
     return e;
+}
+
+void Passenger::addLuggage(Luggage l) {
+    this->l.push_back(l);
+}
+
+std::list<Luggage> &Passenger::getAllLuggage() {
+    return l;
 }
 

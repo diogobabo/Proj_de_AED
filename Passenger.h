@@ -25,8 +25,9 @@ public:
     std::string getName();
     bool operator <(Passenger &p);
     bool operator ==(const Passenger &p)const;
-
-    Luggage getLuggage(int fid);
+    void addLuggage(Luggage l);
+    Luggage& getLuggage(int fid);
+    std::list<Luggage>& getAllLuggage();
 };
 
 

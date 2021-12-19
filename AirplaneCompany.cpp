@@ -103,10 +103,20 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
     }
 
     while(std::getline(l,s)){
-        std::string rest = s.substr(s.find('-'));
-        int pid = std::stoi(s.substr(0,s.find('-')));
+        if(s == "/n"){
+            continue;
+        }
+        std::string rest = s.substr(s.find('-')+1);
+        int pid = std::stoi(s.substr(0+1,s.find('-')));
         int fid = std::stoi(rest.substr(0,s.find(':')));
-        int n = std::stoi(rest.substr(s.find(':')));
+        int n = std::stoi(rest.substr(rest.find(':')+1));
+        Luggage s(fid,n);
+        Passenger f(pid,"");
+        for(auto &sus: clients){
+            if(sus.getId() == pid){
+                sus.addLuggage(s);
+            }
+        }
     }
     l.close();
     aiplanesfile.close();
@@ -226,6 +236,7 @@ void AirplaneCompany::dump() {
     writeClientsFile("clientes.txt");
     writeFlightsFile("flights.txt");
     writeAirplanesFile("airplanes.txt");
+    writeBaggageFile("luggage.txt");
 }
 bool AirplaneCompany::isNumber(const std::string &s) const            //verifies if the string contains only numbers
 {
@@ -615,31 +626,23 @@ void AirplaneCompany::buyTicket() {
 void AirplaneCompany::writeBaggageFile(std::string baggageTXT) {
     std::fstream f;
     std::string sizeLug;
-    std::string idP;
-    std::string numL;
+    std::string idP,idF;
+    int numL;
     f.open(baggageTXT, std::ofstream::out | std::ofstream::trunc);
-    for(auto x : allFlights) {
-        std::string idF = std::to_string(x.getFlightID());
-        while(idF.size() < 4) {
-            idF.insert(0,"0");
+    for(auto x : clients) {
+        idP = std::to_string(x.getId());
+        while(idP.size()<4){
+            idP.insert(0,"0");
         }
-        for(auto y : x.getPassengersId()) {
-            idP = std::to_string(y);
-            while(idP.size() < 4) {
-                idP.insert(0,"0");
+        for(auto sus : x.getAllLuggage()){
+            idF = std::to_string(sus.getid());
+            while(idF.size()<4){
+                idF.insert(0,"0");
             }
-            for(auto w : clients) {
-                for(q : w.getLuggage(x.getFlightID())) {
-                    numL
-                }
-            }
+            f << idP << '-' << idF << ':' << sus.getNumLuggage() << std::endl;
         }
-        f << idP << '-' << idF << ':' << sizeLug << std::endl;
+
     }
-
-}
-
-bool AirplaneCompany::canBuyTicket(Airplane &a1) {
-    return false;
+    f.close();
 }
 
