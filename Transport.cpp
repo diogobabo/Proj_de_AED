@@ -4,27 +4,27 @@
 
 #include "Transport.h"
 
-std::string Transport::getType() {
+std::string Transport::getType() const {
     return type;
 }
 
-void Transport::setType(std::string type) {
+void Transport::setType(const std::string type) {
     this->type=type;
 }
 
-int Transport::getDistance() {
+int Transport::getDistance() const {
     return distance;
 }
 
-void Transport::setDistance(int distance) {
+void Transport::setDistance(const int distance) {
     this->distance=distance;
 }
 
-void Transport::setTime(std::string time) {
+void Transport::setTime(const std::string time) {
     this->time=time;
 }
 
-std::string Transport::getTime() {
+std::string Transport::getTime() const {
     return time;
 }
 

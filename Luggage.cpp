@@ -15,14 +15,14 @@ Luggage::Luggage() {
     this->numLuggage = 0;
 }
 
-int Luggage::getNumLuggage() {
+int Luggage::getNumLuggage() const {
     return numLuggage;
 }
 
-void Luggage::setNumLuggage(int numLuggage) {
+void Luggage::setNumLuggage(const int numLuggage) {
     this->numLuggage=numLuggage;
 }
 
-int Luggage::getid() {
+int Luggage::getid() const {
     return fi;
 }

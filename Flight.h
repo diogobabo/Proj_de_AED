@@ -22,15 +22,15 @@ private:
 public:
     Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny,std::vector<std::string> passengersid);
     Flight(int number);
-    void setDate(std::string date);
-    void setDuration(std::string Duration);
+    void setDate(const std::string date);
+    void setDuration(const std::string Duration);
     int getFlightID() const;
-    std::string getDuration();
-    std::string getOrigin();
-    std::string getStartDate();
-    std::string getDestiny();
-    std::list<int> getPassengersId();
-    void addPassenger(Passenger &p);
+    std::string getDuration() const;
+    std::string getOrigin() const;
+    std::string getStartDate() const;
+    std::string getDestiny() const;
+    std::list<int> getPassengersId() const;
+    void addPassenger(const Passenger &p);
     bool operator <(Flight &f);
     bool operator ==(const Flight &f) const;
 };

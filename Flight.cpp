@@ -4,7 +4,7 @@
 
 #include "Flight.h"
 
-std::string Flight::getDuration() {
+std::string Flight::getDuration() const {
     return Duration;
 }
 
@@ -16,19 +16,19 @@ int Flight::getFlightID() const{
     return FlightNumber;
 }
 
-std::string Flight::getOrigin() {
+std::string Flight::getOrigin() const {
     return Origin;
 }
 
-std::string Flight::getStartDate() {
+std::string Flight::getStartDate() const {
     return StartDate;
 }
 
-std::string Flight::getDestiny() {
+std::string Flight::getDestiny() const {
     return Destiny;
 }
 
-void Flight::setDate(std::string date) {
+void Flight::setDate(const std::string date) {
     this->StartDate=date;
 }
 
@@ -51,7 +51,7 @@ Flight::Flight(int number, std::string StartDate, std::string Duration, std::str
     }
 }
 
-std::list<int> Flight::getPassengersId() {
+std::list<int> Flight::getPassengersId() const {
     return passengersid;
 }
 
@@ -59,7 +59,7 @@ Flight::Flight(int number) {
     this->FlightNumber = number;
 }
 
-void Flight::addPassenger(Passenger &p) {
+void Flight::addPassenger(const Passenger &p) {
     passengersid.push_back(p.getId());
 }
 

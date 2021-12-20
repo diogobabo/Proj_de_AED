@@ -17,13 +17,13 @@ private:
 public:
     Maintenance(std::string Type,std::string Date);
     Maintenance(std::string Type,std::string Date,std::string Employee);
-    bool setMaintenaceDone(std::string Employee);
-    bool isDone();
-    std::string getDate();
+    bool setMaintenaceDone(const std::string Employee);
+    bool isDone() const;
+    std::string getDate() const;
 
-    std::string getMaintenanceInfo();
+    std::string getMaintenanceInfo()const;
 
-    std::string getType();
+    std::string getType()const;
 };
 
 

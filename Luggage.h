@@ -12,9 +12,9 @@ private:
 public:
     Luggage(int fi,int n);
     Luggage();
-    int getNumLuggage();
-    int getid();
-    void setNumLuggage(int numLuggage);
+    int getNumLuggage() const;
+    int getid() const;
+    void setNumLuggage(const int numLuggage);
 };
 
 

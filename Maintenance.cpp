@@ -4,7 +4,7 @@
 
 #include "Maintenance.h"
 
-std::string Maintenance::getDate() {
+std::string Maintenance::getDate() const {
     return Date;
 }
 
@@ -21,10 +21,10 @@ Maintenance::Maintenance(std::string Type, std::string Date, std::string Employe
     this->Employee = Employee;
 }
 
-bool Maintenance::isDone() {
+bool Maintenance::isDone() const {
     return Done;
 }
-std::string Maintenance::getMaintenanceInfo() {
+std::string Maintenance::getMaintenanceInfo() const {
     if(Done == false) {
         return(Date + '/' + Type);
     }
@@ -33,7 +33,7 @@ std::string Maintenance::getMaintenanceInfo() {
     }
 }
 
-std::string Maintenance::getType() {
+std::string Maintenance::getType() const {
     return Type;
 }
 

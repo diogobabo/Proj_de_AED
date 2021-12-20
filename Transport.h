@@ -14,12 +14,12 @@ private:
     std::string time;
 public:
     Transport(std::string destiny,std::string type,std::string time, int distance);
-    std::string getType();
-    void setType(std::string type);
-    void setDistance(int distance);
-    int getDistance();
-    void setTime(std::string time);
-    std::string getTime();
+    std::string getType() const;
+    void setType(const std::string type);
+    void setDistance(const int distance);
+    int getDistance() const;
+    void setTime(const std::string time);
+    std::string getTime() const;
     bool operator<(const Transport &t1) const;
     bool operator==(const Transport &t1) const;
     friend std::ostream& operator<<(std::ostream &f, const Transport &p);

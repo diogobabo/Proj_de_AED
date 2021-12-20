@@ -8,15 +8,15 @@ std::string Airport::getName() const{
     return name;
 }
 
-void Airport::setName(std::string name) {
+void Airport::setName(const std::string name) {
     this->name=name;
 }
 
-BST<Transport>& Airport::getTransports() {
+BST<Transport>& Airport::getTransports()  {
     return transports;
 }
 
-void Airport::addTransport(Transport t1) {
+void Airport::addTransport(const Transport t1) {
     transports.insert(t1);
 }
 
@@ -24,7 +24,7 @@ Airport::Airport(std::string name) {
     this->name=name;
 }
 
-bool Airport::removeTransport(Transport t1) {
+bool Airport::removeTransport(const Transport t1) {
     return transports.remove(t1);
 }
 

@@ -19,14 +19,14 @@ public:
     Passenger(std::string id,std::string name);
     Passenger(int id,std::string name);
     Passenger();
-    void setId(int id);
+    void setId(const int id);
     int getId() const;
-    void setName(std::string name);
-    std::string getName();
-    bool operator <(Passenger &p);
+    void setName(const std::string name);
+    std::string getName() const;
+    bool operator <(const Passenger &p) const;
     bool operator ==(const Passenger &p)const;
-    void addLuggage(Luggage l);
-    Luggage& getLuggage(int fid);
+    void addLuggage(const Luggage l);
+    Luggage& getLuggage(int fid) const;
     std::list<Luggage>& getAllLuggage();
 };
 

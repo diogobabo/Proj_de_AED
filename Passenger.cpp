@@ -9,7 +9,7 @@ void Passenger::setName(std::string name) {
     this->name=name;
 }
 
-std::string Passenger::getName() {
+std::string Passenger::getName() const {
     return name;
 }
 
@@ -17,7 +17,7 @@ int Passenger::getId() const {
     return id;
 }
 
-void Passenger::setId(int id) {
+void Passenger::setId(const int id) {
     this->id = id;
 }
 
@@ -26,7 +26,7 @@ Passenger::Passenger(std::string id, std::string name) {
     this->id = std::stoi(id);
 }
 
-bool Passenger::operator<(Passenger &p) {
+bool Passenger::operator<(const Passenger &p) const {
     return this->id<p.getId();
 }
 
@@ -43,7 +43,7 @@ Passenger::Passenger() {
     name = "";
 }
 
-Luggage& Passenger::getLuggage(int fid) {
+Luggage& Passenger::getLuggage(int fid) const {
     for(auto x:l){
         if(x.getid() == fid){
             return x;
@@ -53,7 +53,7 @@ Luggage& Passenger::getLuggage(int fid) {
     return e;
 }
 
-void Passenger::addLuggage(Luggage l) {
+void Passenger::addLuggage(const Luggage l) {
     this->l.push_back(l);
 }
 
