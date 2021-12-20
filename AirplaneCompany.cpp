@@ -238,8 +238,7 @@ void AirplaneCompany::dump() {
     writeAirplanesFile("airplanes.txt");
     writeBaggageFile("luggage.txt");
 }
-bool AirplaneCompany::isNumber(const std::string &s) const            //verifies if the string contains only numbers
-{
+bool AirplaneCompany::isNumber(const std::string &s) const {            //verifies if the string contains only numbers
     for(int x = 0; x<s.size();x++){
 
         if(isdigit(s[x]) == false)
@@ -690,9 +689,9 @@ void AirplaneCompany::writeBaggageFile(std::string baggageTXT) {
 
 void AirplaneCompany::airplaneData() {
     int id;
-    std::cout << "1) ADD AIRPLANE" << std::endl << "2) REMOVE AIRPLANE" << std::endl << "3) AIRPLANES INFO" << std::endl;
+    std::cout << "1) ADD AIRPLANE" << std::endl << "2) REMOVE AIRPLANE" << std::endl << "3) AIRPLANES INFO" << std::endl << "4) SHOW ALL AIRPLANES" << std::endl;
     std::cin >> id;
-    while(!std::cin || id > 3) {
+    while(!std::cin || id > 4) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;
@@ -706,6 +705,28 @@ void AirplaneCompany::airplaneData() {
     }
     else if(id == 3) {
         airplanesInfo();
+    }
+    else if(id == 4) {
+        int x;
+        std::cout << "1) SORT AIRPLANES BY PLATE" << std::endl << "2) SORT AIRPLANES BY TYPE" << std::endl << "3) SORT AIRPLANES BY CAPACITY" << std::endl;
+        std::cin >> x;
+        while(!std::cin || x > 3) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, please try again: " << std::endl;
+            std::cin >> x;
+        }
+        if(x == 1){
+            std::sort(planes.begin(),planes.end(), sortByPlate);
+            showAirplanes();
+        } else if(x == 2){
+            std::sort(planes.begin(),planes.end(), sortByType);
+            showAirplanes();
+        }
+        else {
+            std::sort(planes.begin(), planes.end(),sortByCapacity);
+            showAirplanes();
+        }
     }
 }
 
@@ -787,3 +808,22 @@ void AirplaneCompany::maintenaceData() {
         doMaintenance();
     }
 }
+
+void AirplaneCompany::showAirplanes() {
+    for(auto x : planes) {
+        std::cout << x << std::endl;
+    }
+}
+
+bool AirplaneCompany::sortByPlate(Airplane &p1, Airplane &p2) {
+    return p1.getPlate() < p2.getPlate();
+}
+
+bool AirplaneCompany::sortByType(Airplane &p1, Airplane &p2) {
+    return p1.getType() < p2.getType();
+}
+
+bool AirplaneCompany::sortByCapacity(Airplane &p1, Airplane &p2) {
+    return p1.getSeats() < p2.getSeats();
+}
+

@@ -34,6 +34,7 @@ public:
     std::string getType() const;
     bool operator ==(const Airplane &a) const;
     bool operator <(const Airplane &a) const;
+    friend std::ostream& operator<<(std::ostream &f, const Airplane &a);
 };
 
 

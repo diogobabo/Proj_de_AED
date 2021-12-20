@@ -3,6 +3,7 @@
 //
 
 #include <algorithm>
+#include <iostream>
 #include "Airplane.h"
 
 void Airplane::addFligth(const Flight flight) {
@@ -60,6 +61,11 @@ bool Airplane::operator<(const Airplane &a) const {
 
 void Airplane::setMaintenanceNotDone(std::queue<Maintenance> temp) {
     this->maintenanceToBeDone = temp;
+}
+
+std::ostream &operator<<(std::ostream &f, const Airplane &a) {
+    f << "PLATE: " <<  a.getPlate() << " TYPE: " <<  a.getType() << " CAPACITY: " << a.getSeats();
+    return f;
 }
 
 

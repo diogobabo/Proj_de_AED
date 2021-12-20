@@ -39,6 +39,9 @@ private:
     void removeFlight();
     static bool sortByDate(Flight &f1,Flight &f2) ;
     static bool sortByTime(Flight &f1,Flight &f2) ;
+    static bool sortByPlate(Airplane &p1, Airplane &p2);
+    static bool sortByType(Airplane &p1, Airplane &p2);
+    static bool sortByCapacity(Airplane &p1, Airplane &p2);
     void flightData();
     void buyTicket();
     bool canBuyTicket(Airplane &a1);
@@ -47,6 +50,7 @@ private:
     void addMaintenance();
     void doMaintenance();
     void maintenaceData();
+    void showAirplanes();
 public:
     AirplaneCompany(std::string aiplanesfileTXT,std::string clientsfileTXT);
     void dump();
