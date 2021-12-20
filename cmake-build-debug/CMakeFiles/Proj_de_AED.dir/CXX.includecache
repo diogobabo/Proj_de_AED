@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.cpp
-algorithm
--
-iostream
--
-Airplane.h
-C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h
-
 C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h
 string
 -
@@ -46,6 +38,14 @@ C:/Users/oliveira/Desktop/Proj_de_AED/Airplane.h
 Passenger.h
 C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
 
+C:/Users/oliveira/Desktop/Proj_de_AED/Airport.h
+string
+-
+bst.h
+C:/Users/oliveira/Desktop/Proj_de_AED/bst.h
+Transport.h
+C:/Users/oliveira/Desktop/Proj_de_AED/Transport.h
+
 C:/Users/oliveira/Desktop/Proj_de_AED/Flight.h
 string
 -
@@ -55,6 +55,22 @@ vector
 -
 Passenger.h
 C:/Users/oliveira/Desktop/Proj_de_AED/Passenger.h
+
+C:/Users/oliveira/Desktop/Proj_de_AED/Interface.cpp
+iostream
+-
+sstream
+-
+Interface.h
+C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h
+AirplaneCompany.h
+C:/Users/oliveira/Desktop/Proj_de_AED/AirplaneCompany.h
+Timetable.h
+C:/Users/oliveira/Desktop/Proj_de_AED/Timetable.h
+
+C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h
+vector
+-
 
 C:/Users/oliveira/Desktop/Proj_de_AED/Luggage.h
 
@@ -69,4 +85,28 @@ Luggage.h
 C:/Users/oliveira/Desktop/Proj_de_AED/Luggage.h
 list
 -
+
+C:/Users/oliveira/Desktop/Proj_de_AED/Timetable.h
+bst.h
+C:/Users/oliveira/Desktop/Proj_de_AED/bst.h
+Airport.h
+C:/Users/oliveira/Desktop/Proj_de_AED/Airport.h
+
+C:/Users/oliveira/Desktop/Proj_de_AED/Transport.h
+string
+-
+
+C:/Users/oliveira/Desktop/Proj_de_AED/bst.h
+iostream
+-
+stack
+-
+queue
+-
+
+C:/Users/oliveira/Desktop/Proj_de_AED/main.cpp
+iostream
+-
+Interface.h
+C:/Users/oliveira/Desktop/Proj_de_AED/Interface.h
 

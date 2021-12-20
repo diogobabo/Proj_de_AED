@@ -252,7 +252,7 @@ void AirplaneCompany::getOptions() {
 
     int number = 50;
 
-    while (flag) {          //checks the input
+    while (flag) {//checks the input
         std::cout << "1) ADD NEW CLIENT" << std::endl << "2) BUY PLANE TICKET FOR CLIENT" << std::endl << "3) AIRPLANES DATA" << std::endl<< "4) FLIGHT MANAGEMENT" << std::endl << "5) MAINTENANCE"<< std::endl<< "0) BACK"<< std::endl;
 
         std::string x;
@@ -826,4 +826,6 @@ bool AirplaneCompany::sortByType(Airplane &p1, Airplane &p2) {
 bool AirplaneCompany::sortByCapacity(Airplane &p1, Airplane &p2) {
     return p1.getSeats() < p2.getSeats();
 }
+
+
 

@@ -17,6 +17,7 @@ private:
     bool isNumber(const std::string &s) const;
     void loginAsCompany();
     void loginTransports();
+    void showMenu();
 public:
     void iniciate();
 

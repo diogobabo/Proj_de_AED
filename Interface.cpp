@@ -32,8 +32,7 @@ int Interface::menuCall() {
     int number = 50;
 
     while (flag) {          //checks the input
-        std::cout << "Login as: " << std::endl;
-        std::cout << "1) AIRPLANE COMPANY"  << std::endl << "2) TIMETABLES PUBLIC TRANSPORTS" << std::endl << "0) EXIT"<< std::endl;
+        showMenu();
 
         std::string x;
 
@@ -106,3 +105,16 @@ void Interface::loginTransports() {
     t.print();
 }
 
+void Interface::showMenu() {
+    std::cout << " ____________________________________________________________________________________" <<  std::endl;
+    std::cout << "|                                                                                   |" <<  std::endl;
+    std::cout << "|                                                                                   |" <<  std::endl;
+    std::cout << "|                                                         __|__                     |" <<  std::endl;
+    std::cout << "|    *OPTIONS*                                     --------(_)--------              |" <<  std::endl;
+    std::cout << "|                                                    O  O       O  O                |" <<  std::endl;
+    std::cout << "|    0 -> EXIT                                                                      |" <<  std::endl;
+    std::cout << "|    1 -> AIRPLANE COMPANY                                                          |" <<  std::endl;
+    std::cout << "|    2 -> TIMETABLES PUBLIC TRANSPORT                                               |" <<  std::endl;
+    std::cout << "|                                                                                   |" <<  std::endl;
+    std::cout << " ------------------------------------------------------------------------------------" <<  std::endl;
+}
