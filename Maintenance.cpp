@@ -37,7 +37,7 @@ std::string Maintenance::getType() const {
     return Type;
 }
 
-bool Maintenance::setMaintenaceDone(std::string Employee) {
+void Maintenance::setMaintenaceDone(std::string Employee) {
     this->Done = true;
     this->Employee = Employee;
 }

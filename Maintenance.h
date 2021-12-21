@@ -17,7 +17,7 @@ private:
 public:
     Maintenance(std::string Type,std::string Date);
     Maintenance(std::string Type,std::string Date,std::string Employee);
-    bool setMaintenaceDone(const std::string Employee);
+    void setMaintenaceDone(const std::string Employee);
     bool isDone() const;
     std::string getDate() const;
 
