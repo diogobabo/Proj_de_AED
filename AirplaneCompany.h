@@ -22,7 +22,7 @@ private:
     std::vector<Passenger> clients;
     std::fstream aiplanesfile;
     std::fstream clientsfile;
-    std::vector<Flight> allFlights;
+    std::vector<Flight*> allFlights;
 
 
     void SplitString(std::string s, std::vector<std::string> &v,char c);
@@ -105,14 +105,14 @@ private:
         * @param f1,f2
         * @return boolean
      **/
-    static bool sortByDate(Flight &f1,Flight &f2) ;
+    static bool sortByDate(Flight *f1,Flight *f2) ;
 
     /**
         * function to sort the flights by duration
         * @param f1,f2
         * @return boolean
      **/
-    static bool sortByTime(Flight &f1,Flight &f2) ;
+    static bool sortByTime(Flight *f1,Flight *f2) ;
 
     /**
         * function to sort the airplanes by plate

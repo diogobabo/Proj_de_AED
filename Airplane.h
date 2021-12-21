@@ -16,7 +16,7 @@ private:
     std::string plate;
     std::string type;
     int seats;
-    std::list<Flight> flights;
+    std::list<Flight*> flights;
     std::queue<Maintenance> maintenanceToBeDone;
     std::list<Maintenance> maintenanceToDone;
 public:
@@ -59,7 +59,7 @@ public:
      * adds a flight to the airplane
      * @param flight
      **/
-    void addFligth(const Flight flight);
+    void addFligth(Flight *flight);
 
     /**
      * adds a maintenance to the airplane
@@ -83,7 +83,7 @@ public:
      * returns the list of flights of a airplane
      * @returns list of flights
      */
-    std::list<Flight> &getFlights() ;
+    std::list<Flight*> &getFlights() ;
 
     /**
      * returns the type of a airplane

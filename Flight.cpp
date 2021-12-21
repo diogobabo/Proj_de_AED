@@ -39,6 +39,9 @@ bool Flight::operator<(Flight &f) {
 bool Flight::operator==(const Flight &f) const {
     return getFlightID() == f.getFlightID();
 }
+bool Flight::operator==(const Flight *f) const {
+    return getFlightID() == (*f).getFlightID();
+}
 
 Flight::Flight(int number, std::string StartDate, std::string Duration, std::string Origin, std::string destiny,std::vector<std::string> passengersid) {
     this->FlightNumber = number;

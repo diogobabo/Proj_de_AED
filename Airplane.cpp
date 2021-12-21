@@ -6,7 +6,7 @@
 #include <iostream>
 #include "Airplane.h"
 
-void Airplane::addFligth(const Flight flight) {
+void Airplane::addFligth(Flight *flight) {
     flights.push_back(flight);
 }
 
@@ -18,7 +18,7 @@ int Airplane::getSeats() const {
     return seats;
 }
 
-std::list<Flight> &Airplane::getFlights(){
+std::list<Flight*> &Airplane::getFlights(){
     return flights;
 }
 

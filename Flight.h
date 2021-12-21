@@ -106,6 +106,7 @@ public:
      * @return a boolean
      **/
     bool operator ==(const Flight &f) const;
+    bool operator ==(const Flight *f) const;
 
     void addL(InternalLuggage luggage);
     std::list<std::stack<InternalLuggage>> getl();

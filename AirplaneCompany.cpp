@@ -44,7 +44,8 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         SplitString(flight[5],p,',');
 
         Flight f(std::stoi(flight[0]),flight[1],flight[2],flight[3],flight[4],p);
-        allFlights.push_back(f);
+        Flight *e = new Flight(f);
+        allFlights.push_back(e);
 
     }
 
@@ -75,7 +76,7 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
 
         for(auto x :f){
             for(auto y: allFlights){
-                if(std::stoi(x) == y.getFlightID())
+                if(std::stoi(x) == (*y).getFlightID())
                     p.addFligth(y);
             }
 
@@ -170,7 +171,7 @@ void AirplaneCompany::writeAirplanesFile(std::string airplanesfileTXT) {
             continue;
         }
         for(auto y : x.getFlights()) {
-            std::string id = std::to_string(y.getFlightID());
+            std::string id = std::to_string((*y).getFlightID());
             while(id.size() < 4) {
                 id.insert(0,"0");
             }
@@ -211,11 +212,11 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
     f.open(flightsTXT, std::ofstream::out | std::ofstream::trunc);
     for(auto x : allFlights) {
         std::string clients = "";
-        std::string id = std::to_string(x.getFlightID());
+        std::string id = std::to_string((*x).getFlightID());
         while(id.size() < 4) {
             id.insert(0,"0");
         }
-        for(auto y : x.getPassengersId()) {
+        for(auto y : (*x).getPassengersId()) {
             std::string idPass = std::to_string(y);
             while(idPass.size() < 4) {
                 idPass.insert(0,"0");
@@ -223,12 +224,12 @@ void AirplaneCompany::writeFlightsFile(std::string flightsTXT) {
             clients += idPass + ',';
         }
         if(clients.length() == 0){
-            std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny();
+            std::string a =  id + '-' + (*x).getStartDate() + '-' + (*x).getDuration() + '-' + (*x).getOrigin() + '-' + (*x).getDestiny();
             f << a << std::endl;
             continue;
         }
         clients.pop_back();
-        std::string a =  id + '-' + x.getStartDate() + '-' + x.getDuration() + '-' + x.getOrigin() + '-' + x.getDestiny() + '-' + clients;
+        std::string a =  id + '-' + (*x).getStartDate() + '-' + (*x).getDuration() + '-' + (*x).getOrigin() + '-' + (*x).getDestiny() + '-' + clients;
         f << a << std::endl;
     }
     f.close();
@@ -338,11 +339,11 @@ void AirplaneCompany::addClient() {
         }
     }
 }
-bool AirplaneCompany::sortByDate(Flight &f1, Flight &f2) {
-    return f1.getStartDate()<f2.getStartDate();
+bool AirplaneCompany::sortByDate(Flight *f1, Flight *f2) {
+    return (*f1).getStartDate()<(*f2).getStartDate();
 }
-bool AirplaneCompany::sortByTime(Flight &f1, Flight &f2) {
-    return f1.getDuration()<f2.getDuration();
+bool AirplaneCompany::sortByTime(Flight *f1, Flight *f2) {
+    return (*f1).getDuration()<(*f2).getDuration();
 }
 
 void AirplaneCompany::airplanesInfo() {
@@ -350,7 +351,7 @@ void AirplaneCompany::airplanesInfo() {
     int x;
     std::cout << "1) CHECK FLIGHTS OF AN AIRPLANE" << std::endl<< "2) CHECK A FLIGHT OF AN AIRPLANE" << std::endl << "3) SHOW ALL FLIGHTS" << std::endl;
     std::cin >> x;
-    while(!std::cin || x > 2) {
+    while(!std::cin || x > 3) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;
@@ -366,7 +367,7 @@ void AirplaneCompany::airplanesInfo() {
             if(x.getPlate() == plate) {
                 found = true;
                 for(auto y : x.getFlights()) {
-                    std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+                    std::cout << "Flight from "<< (*y).getOrigin() << " to " << (*y).getDestiny() << " on " << (*y).getStartDate() << " with the duration of " <<  (*y).getDuration() << " (hours:minutes)" << std::endl;
                 }
             }
         }
@@ -392,9 +393,9 @@ void AirplaneCompany::airplanesInfo() {
         for(auto x : planes) {
             if(x.getPlate() == plate) {
                 for( auto &sus : x.getFlights()){
-                    if(sus.getFlightID() == flight){
-                        std::cout << "Flight from "<< sus.getOrigin() << " to " << sus.getDestiny() << " on " << sus.getStartDate() << " with the duration of " <<  sus.getDuration() << " (hours:minutes)" << std::endl;
-                        std::cout << "LUGGAGE LOGISTIC: need "<< std::to_string(int(ceil((sus.getl().size()/4.0)))) << " cars with stacks of 4 bags to transport the luggage to the airplane"<<std::endl;
+                    if((*sus).getFlightID() == flight){
+                        std::cout << "Flight from "<< (*sus).getOrigin() << " to " << (*sus).getDestiny() << " on " << (*sus).getStartDate() << " with the duration of " <<  (*sus).getDuration() << " (hours:minutes)" << std::endl;
+                        std::cout << "LUGGAGE LOGISTIC: need "<< std::to_string(int(ceil(((*sus).getl().size()/4.0)))) << " cars with stacks of 4 bags to transport the luggage to the airplane"<<std::endl;
                     }
                 }
             }
@@ -426,9 +427,9 @@ void AirplaneCompany::airplanesInfo() {
             std::cout << "TYPE THE ORIGIN" << std::endl;
             checkInputStringFlight(origin);
             for(auto x : allFlights) {
-                if(x.getOrigin() == origin) {
+                if((*x).getOrigin() == origin) {
                     found = true;
-                    std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
+                    std::cout << "Flight from "<< (*x).getOrigin() << " to " << (*x).getDestiny() << " on " << (*x).getStartDate() << " with the duration of " <<  (*x).getDuration() << " (hours:minutes)" << std::endl;
                 }
             }
             if(!found){
@@ -440,9 +441,9 @@ void AirplaneCompany::airplanesInfo() {
             std::cout << "TYPE THE DESTINY" << std::endl;
             checkInputStringFlight(destiny);
             for(auto x : allFlights) {
-                if(x.getDestiny() == destiny) {
+                if((*x).getDestiny() == destiny) {
                     found = true;
-                    std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
+                    std::cout << "Flight from "<< (*x).getOrigin() << " to " << (*x).getDestiny() << " on " << (*x).getStartDate() << " with the duration of " <<  (*x).getDuration() << " (hours:minutes)" << std::endl;
                 }
             }
             if(!found){
@@ -555,8 +556,8 @@ void AirplaneCompany::addFlight() {
     bool found = false;
     for(auto x : planes) {
         for(auto y : x.getFlights()) {
-            if(y.getFlightID() > max) {
-                max = y.getFlightID();
+            if(y->getFlightID() > max) {
+                max = y->getFlightID();
             }
         }
     }
@@ -573,16 +574,17 @@ void AirplaneCompany::addFlight() {
     checkInputStringPlane(plate);
     std::vector<std::string>p;
     Flight f1(id, date, duration , origin , destiny,p);
+    Flight *f2 = new Flight(f1);
 
     for(auto &x: planes) {
         if(x.getPlate() == plate) {
             found = true;
-            x.addFligth(f1);
+            x.addFligth(f2);
             break;
         }
     }
     if(found) {
-        allFlights.push_back(f1);
+        allFlights.push_back(f2);
     }
     std::cout << "FLIGHT ADDED SUCCESSFULLY!" << std::endl;
     if(!found) {
@@ -607,7 +609,7 @@ void AirplaneCompany::removeFlight() {
     for(auto it = planes.begin(); it != planes.end(); it++) {
         if(it->getPlate() == plate) {
             for(auto jt = it->getFlights().begin(); jt != it->getFlights().end(); jt++) {
-                if(jt->getFlightID() == id) {
+                if((*jt)->getFlightID() == id) {
                     jt = it->getFlights().erase(jt);
                     found = true;
                     break;
@@ -620,7 +622,7 @@ void AirplaneCompany::removeFlight() {
         return;
     }
     for(auto it = allFlights.begin(); it != allFlights.end(); it++) {
-        if(it->getFlightID() == id) {
+        if((*it)->getFlightID() == id) {
             it = allFlights.erase(it);
             break;
         }
@@ -692,9 +694,9 @@ void AirplaneCompany::buyTicket() {
             for(auto &it2 : planes){
                 if(it2.getPlate() == plate){
                     for(auto &it3 : it2.getFlights()){
-                        if(it3.getFlightID() == y){
+                        if(it3->getFlightID() == y){
                             Luggage l(y,numL);
-                            for(auto it = it3.getPassengersId().begin(); it != it3.getPassengersId().end(); it++) {
+                            for(auto it = it3->getPassengersId().begin(); it != it3->getPassengersId().end(); it++) {
                                 if(*it == x) {
                                     if(numL <= 0) {
                                         return;
@@ -704,8 +706,12 @@ void AirplaneCompany::buyTicket() {
                                 }
                             }
                             it1.addLuggage(l);
-                            it3.addPassenger(it1);
-                            std::find(allFlights.begin(),allFlights.end(),it3)->addPassenger(it1);
+                            it3->addPassenger(it1);
+                            for(auto x: allFlights){
+                                if((*x) == it3){
+                                    (*x).addPassenger(it1);
+                                }
+                            }
                             std::cout << "ADDED" << std::endl;
                             return;
                         }
@@ -888,7 +894,7 @@ bool AirplaneCompany::sortByCapacity(Airplane &p1, Airplane &p2) {
 
 void AirplaneCompany::showAllFlights() {
     for(auto y : allFlights) {
-        std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+        std::cout << "Flight from "<< (*y).getOrigin() << " to " << (*y).getDestiny() << " on " << (*y).getStartDate() << " with the duration of " <<  (*y).getDuration() << " (hours:minutes)" << std::endl;
     }
 }
 
@@ -901,14 +907,14 @@ void AirplaneCompany::luggageLogistic() {
             for(int z = 0;z < y.getNumLuggage();z++){
                 InternalLuggage l(x);
                 for(auto &sus: allFlights){
-                    if(sus.getFlightID() == y.getid()){
-                        sus.addL(l);
+                    if((*sus).getFlightID() == y.getid()){
+                        (*sus).addL(l);
                     }
                 }
                 for(auto &sus: planes){
                     for(auto &sus1: sus.getFlights()){
-                        if(sus1.getFlightID() == y.getid()){
-                            sus1.addL(l);
+                        if(sus1->getFlightID() == y.getid()){
+                            sus1->addL(l);
                         }
                     }
                 }
