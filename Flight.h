@@ -8,7 +8,9 @@
 #include <string>
 #include <list>
 #include <vector>
+#include <stack>
 #include "Passenger.h"
+#include "InternalLuggage.h"
 
 class Flight {
 private:
@@ -18,6 +20,7 @@ private:
     std::string Duration; // format hours:minutes
     std::string Origin;
     std::string Destiny;
+    std::list<std::stack<InternalLuggage>> order;
     std::list<int> passengersid;
 public:
     /**
@@ -103,6 +106,9 @@ public:
      * @return a boolean
      **/
     bool operator ==(const Flight &f) const;
+
+    void addL(InternalLuggage luggage);
+    std::list<std::stack<InternalLuggage>> getl();
 };
 
 

@@ -3,9 +3,11 @@
 //
 
 #include "AirplaneCompany.h"
+#include "InternalLuggage.h"
 #include <iostream>
 #include <algorithm>
 #include <sstream>
+#include <math.h>
 
 AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string clientsfileTXT):aiplanesfile(),clientsfile() {
     aiplanesfile.open(aiplanesfileTXT);
@@ -111,13 +113,13 @@ AirplaneCompany::AirplaneCompany(std::string aiplanesfileTXT, std::string client
         int fid = std::stoi(rest.substr(0,s.find(':')));
         int n = std::stoi(rest.substr(rest.find(':')+1));
         Luggage s(fid,n);
-        Passenger f(pid,"");
         for(auto &sus: clients){
             if(sus.getId() == pid){
                 sus.addLuggage(s);
             }
         }
     }
+    luggageLogistic();
     l.close();
     aiplanesfile.close();
     clientsfile.close();
@@ -346,7 +348,7 @@ bool AirplaneCompany::sortByTime(Flight &f1, Flight &f2) {
 void AirplaneCompany::airplanesInfo() {
     bool flag;
     int x;
-    std::cout << "1) CHECK FLIGHTS OF A AIRPLANE" << std::endl << "2) SHOW ALL FLIGHTS" << std::endl;
+    std::cout << "1) CHECK FLIGHTS OF AN AIRPLANE" << std::endl<< "2) CHECK A FLIGHT OF AN AIRPLANE" << std::endl << "3) SHOW ALL FLIGHTS" << std::endl;
     std::cin >> x;
     while(!std::cin || x > 2) {
         std::cin.clear();
@@ -355,6 +357,7 @@ void AirplaneCompany::airplanesInfo() {
         std::cin >> x;
     }
     if(x == 1) {
+        luggageLogistic();
         bool found = false;
         std::string plate;
         std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
@@ -373,6 +376,35 @@ void AirplaneCompany::airplanesInfo() {
         }
     }
     else if(x == 2) {
+        bool found = false;
+        std::string plate;
+        std::cout << "TYPE THE PLATE OF THE PLANE" << std::endl;
+        checkInputStringPlane(plate);
+        int flight;
+        std::cout << "TYPE THE FLIGHT OF THE PLANE" << std::endl;
+        std::cin >> flight;
+        while(std::cin.fail()){
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, please try again: " << std::endl;
+            std::cin >> flight;
+        }
+        for(auto x : planes) {
+            if(x.getPlate() == plate) {
+                for( auto &sus : x.getFlights()){
+                    if(sus.getFlightID() == flight){
+                        std::cout << "Flight from "<< sus.getOrigin() << " to " << sus.getDestiny() << " on " << sus.getStartDate() << " with the duration of " <<  sus.getDuration() << " (hours:minutes)" << std::endl;
+                        std::cout << "LUGGAGE LOGISTIC: need "<< std::to_string(int(ceil((sus.getl().size()/4.0)))) << " cars with stacks of 4 bags to transport the luggage to the airplane"<<std::endl;
+                    }
+                }
+            }
+        }
+        std::cout << '\n';
+        if(!found) {
+            std::cout << "There are no flights for that plane!" << std::endl;
+        }
+    }
+    else if(x == 3) {
         int x;
         std::cout << "1) SORT FLIGHTS BY DATE" << std::endl << "2) SORT FLIGHTS BY TIME" << std::endl << "3) SEARCH FLIGHTS BY ORIGIN" << std::endl << "4) SEARCH FLIGHTS BY DESTINY" << std::endl;
         std::cin >> x;
@@ -389,22 +421,32 @@ void AirplaneCompany::airplanesInfo() {
             std::sort(allFlights.begin(),allFlights.end(),sortByTime);
             showAllFlights();
         } else if(x == 3) {
+            bool found = false;
             std::string origin;
             std::cout << "TYPE THE ORIGIN" << std::endl;
             checkInputStringFlight(origin);
             for(auto x : allFlights) {
                 if(x.getOrigin() == origin) {
+                    found = true;
                     std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
                 }
             }
+            if(!found){
+                std::cout << "COULD NOT FIND FLIGHT "<<std::endl;
+            }
         } else if(x==4) {
+            bool found = false;
             std::string destiny;
-            std::cout << "TYPE THE ORIGIN" << std::endl;
+            std::cout << "TYPE THE DESTINY" << std::endl;
             checkInputStringFlight(destiny);
             for(auto x : allFlights) {
-                if(x.getOrigin() == destiny) {
+                if(x.getDestiny() == destiny) {
+                    found = true;
                     std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
                 }
+            }
+            if(!found){
+                std::cout << "COULD NOT FIND FLIGHT "<<std::endl;
             }
         }
     }
@@ -848,6 +890,34 @@ void AirplaneCompany::showAllFlights() {
     for(auto y : allFlights) {
         std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
     }
+}
+
+void AirplaneCompany::luggageLogistic() {
+
+    for(auto &x :clients){
+
+        for(auto &y : x.getAllLuggage()){
+
+            for(int z = 0;z < y.getNumLuggage();z++){
+                InternalLuggage l(x);
+                for(auto &sus: allFlights){
+                    if(sus.getFlightID() == y.getid()){
+                        sus.addL(l);
+                    }
+                }
+                for(auto &sus: planes){
+                    for(auto &sus1: sus.getFlights()){
+                        if(sus1.getFlightID() == y.getid()){
+                            sus1.addL(l);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
 }
 
 

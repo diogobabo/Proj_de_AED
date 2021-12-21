@@ -63,3 +63,30 @@ void Flight::addPassenger(const Passenger &p) {
     passengersid.push_back(p.getId());
 }
 
+
+
+void Flight::addL(InternalLuggage luggage) {
+    if(order.empty()){
+        order.push_back(std::stack<InternalLuggage>());
+        order.back().push(luggage);
+        return;
+    }
+    for(auto &sus:order){
+        if(sus.size()<=4){
+            sus.push(luggage);
+            return;
+        }
+        else{
+            order.push_back(std::stack<InternalLuggage>());
+            order.back().push(luggage);
+            return;
+        }
+    }
+}
+
+std::list<std::stack<InternalLuggage>> Flight::getl() {
+    return order;
+}
+
+
+

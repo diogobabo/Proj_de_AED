@@ -77,6 +77,7 @@ public:
      * default constructor for Airport
      **/
     Airport();
+    void findPrintTransport(const Transport& transport)const;
 };
 
 #endif //PROJ_DE_AED_AIRPORT_H

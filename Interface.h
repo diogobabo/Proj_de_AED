@@ -10,7 +10,9 @@
 
 class Interface {
 private:
-    enum EntryType {AIRPLANECOMPANY, TIMETABLESPUBLIC};
+    enum EntryType {
+        AIRPLANECOMPANY, TIMETABLESPUBLIC
+    };
     EntryType TYPE;
 
     /**
@@ -45,10 +47,15 @@ private:
     */
     void showMenu();
 
+    /**
+     * displays the menu
+     */
+
 public:
+
     void iniciate();
 
-};
 
+};
 
 #endif //PROJ_DE_AED_INTERFACE_H

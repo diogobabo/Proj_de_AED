@@ -197,6 +197,7 @@ public:
         * gives the different options for the AIRPLANE COMPANY submenu
         **/
     void getOptions();
+    void luggageLogistic();
 };
 
 

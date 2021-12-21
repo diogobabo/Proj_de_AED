@@ -46,3 +46,17 @@ ostream &operator<<(ostream &f, const Airport &p) {
     }
     return f;
 }
+
+void Airport::findPrintTransport(const Transport & transport) const {
+    bool flag = true;
+    for(iteratorBST<Transport> it = transports.begin();it!=transports.end();it++){
+        if((*it).getDestiny() == transport.getDestiny()){
+            std::cout<< "From: " << name << *it << endl;
+            flag = false;
+        }
+    }
+    if(flag){
+        std::cout<< "COULD NOT FIND" << endl;
+    }
+    return;
+}

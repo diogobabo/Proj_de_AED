@@ -13,9 +13,17 @@ class Timetable {
 private:
     BST<Airport> airportBst = BST<Airport>(Airport());
     void SplitString(string s, vector<std::string> &v, char c);
+    void searchByAirport();
+    void searchByDestiny();
+    void getString(std::string &y);
 public:
     Timetable(std::string text);
-    void print();
+    void timetableMenu();
+    void printAll();
+
+
+    bool isNumber(const string &s) const;
+
 
 
 };

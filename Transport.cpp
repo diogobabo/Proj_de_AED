@@ -29,10 +29,16 @@ std::string Transport::getTime() const {
 }
 
 bool Transport::operator<(const Transport &t1) const {
-    if(time == t1.time) {
-        return distance < t1.distance;
+    if(destiny == t1.destiny) {
+        if (type == t1.type) {
+            if (distance == t1.distance) {
+                return time < t1.time;
+            }
+            return distance < t1.distance;
+        }
+        return type < t1.type;
     }
-    return time < t1.time;
+    return destiny < t1.destiny;
 }
 
 Transport::Transport(std::string destiny, std::string type,  std::string time, int distance) {
@@ -43,7 +49,7 @@ Transport::Transport(std::string destiny, std::string type,  std::string time, i
 }
 
 bool Transport::operator==(const Transport &t1) const {
-    if(type == t1.type && distance == t1.distance && time == t1.time) {
+    if(type == t1.type && distance == t1.distance && time == t1.time && destiny == t1.destiny) {
         return true;
     }
     return false;
@@ -53,4 +59,12 @@ std::ostream &operator<<(std::ostream &f, const Transport &p) {
     std::string s = " distancing " + std::to_string(p.distance) + " km" +" to " + p.destiny + " by "+ p.type + " at "+p.time + " (hh:mm) ";
     f<<s;
     return f;
+}
+
+Transport::Transport(std::string destiny) {
+    this->destiny = destiny;
+}
+
+std::string Transport::getDestiny() const{
+    return destiny;
 }

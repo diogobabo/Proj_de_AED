@@ -14,7 +14,9 @@ private:
     std::string time;
 public:
     Transport(std::string destiny,std::string type,std::string time, int distance);
+    Transport(std::string destiny);
     std::string getType() const;
+    std::string getDestiny()const;
     void setType(const std::string type);
     void setDistance(const int distance);
     int getDistance() const;

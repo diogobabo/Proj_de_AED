@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Interface.h">
 			<Option target="Proj_de_AED"/>
 		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/InternalLuggage.cpp">
+			<Option target="Proj_de_AED"/>
+		</Unit>
+		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/InternalLuggage.h">
+			<Option target="Proj_de_AED"/>
+		</Unit>
 		<Unit filename="C:/Users/Diogo Babo/Desktop/Proj_de_AED/Luggage.cpp">
 			<Option target="Proj_de_AED"/>
 		</Unit>

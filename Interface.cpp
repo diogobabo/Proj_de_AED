@@ -101,8 +101,10 @@ void Interface::loginAsCompany(){
 }
 
 void Interface::loginTransports() {
+
     Timetable t("timetable.txt");
-    t.print();
+    t.timetableMenu();
+
 }
 
 void Interface::showMenu() {
