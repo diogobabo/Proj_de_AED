@@ -374,9 +374,9 @@ void AirplaneCompany::airplanesInfo() {
     }
     else if(x == 2) {
         int x;
-        std::cout << "1) SORT FLIGHTS BY DATE" << std::endl << "2) SORT FLIGHTS BY TIME" << std::endl;
+        std::cout << "1) SORT FLIGHTS BY DATE" << std::endl << "2) SORT FLIGHTS BY TIME" << std::endl << "3) SEARCH FLIGHTS BY ORIGIN" << std::endl << "4) SEARCH FLIGHTS BY DESTINY" << std::endl;
         std::cin >> x;
-        while(!std::cin || x > 2) {
+        while(!std::cin || x > 4) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Invalid input, please try again: " << std::endl;
@@ -384,13 +384,29 @@ void AirplaneCompany::airplanesInfo() {
         }
         if(x == 1){
             std::sort(allFlights.begin(),allFlights.end(),sortByDate);
-        } else{
+            showAllFlights();
+        } else if (x==2){
             std::sort(allFlights.begin(),allFlights.end(),sortByTime);
+            showAllFlights();
+        } else if(x == 3) {
+            std::string origin;
+            std::cout << "TYPE THE ORIGIN" << std::endl;
+            checkInputStringFlight(origin);
+            for(auto x : allFlights) {
+                if(x.getOrigin() == origin) {
+                    std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
+                }
+            }
+        } else if(x==4) {
+            std::string destiny;
+            std::cout << "TYPE THE ORIGIN" << std::endl;
+            checkInputStringFlight(destiny);
+            for(auto x : allFlights) {
+                if(x.getOrigin() == destiny) {
+                    std::cout << "Flight from "<< x.getOrigin() << " to " << x.getDestiny() << " on " << x.getStartDate() << " with the duration of " <<  x.getDuration() << " (hours:minutes)" << std::endl;
+                }
+            }
         }
-        for(auto y : allFlights) {
-            std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
-        }
-
     }
     return;
 }
@@ -574,19 +590,20 @@ void AirplaneCompany::flightData() {
     bool found = false;
     int id;
     std::string plate;
-    std::cout << "1) REMOVE FLIGHT" << std::endl<< "2) ADD FLIGHT"<< std::endl;
+    std::cout << "1) REMOVE FLIGHT" << std::endl<< "2) ADD FLIGHT"<< std::endl << "3) CHECK FLIGHTS"<< std::endl;
     std::cin >> id;
-    while(!std::cin || id > 2) {
+    while(!std::cin || id > 3) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;
         std::cin >> id;
     }
     if(id == 1){
-        //removeFlight();
-        doMaintenance();
+        removeFlight();
     }else if(id == 2){
         addFlight();
+    } else if(id == 3) {
+        airplanesInfo();
     }
 }
 
@@ -723,7 +740,7 @@ void AirplaneCompany::airplaneData() {
             std::sort(planes.begin(),planes.end(), sortByType);
             showAirplanes();
         }
-        else {
+        else if(x==3) {
             std::sort(planes.begin(), planes.end(),sortByCapacity);
             showAirplanes();
         }
@@ -825,6 +842,12 @@ bool AirplaneCompany::sortByType(Airplane &p1, Airplane &p2) {
 
 bool AirplaneCompany::sortByCapacity(Airplane &p1, Airplane &p2) {
     return p1.getSeats() < p2.getSeats();
+}
+
+void AirplaneCompany::showAllFlights() {
+    for(auto y : allFlights) {
+        std::cout << "Flight from "<< y.getOrigin() << " to " << y.getDestiny() << " on " << y.getStartDate() << " with the duration of " <<  y.getDuration() << " (hours:minutes)" << std::endl;
+    }
 }
 
 

@@ -20,18 +20,88 @@ private:
     std::string Destiny;
     std::list<int> passengersid;
 public:
+    /**
+     * Constructor of the class
+     * @param number: number of the flight
+     * @param StartDate: date of departure
+     * @param Origin: place of origin
+     * @param destiny: place of destiny
+     * @param passengersid: vector of the ids of the passengers
+     **/
     Flight(int number,std::string StartDate,std::string Duration,std::string Origin,std::string destiny,std::vector<std::string> passengersid);
+
+    /**
+    * Constructor of the class
+    * @param number: number of the flight
+    **/
     Flight(int number);
+
+    /**
+     * sets the date of departure
+     * @param date: the date
+     */
     void setDate(const std::string date);
+
+    /**
+     * sets the duration of the flight
+     * @param date: the date
+     */
     void setDuration(const std::string Duration);
+
+    /**
+     * returns the id of the flight
+     * @return: flight ID
+     */
     int getFlightID() const;
+
+    /**
+     * returns the duration of the flight
+     * @return: duration
+     */
     std::string getDuration() const;
+
+    /**
+     * returns the origin of the flight
+     * @return: origin
+     */
     std::string getOrigin() const;
+
+    /**
+     * returns the start date of the flight
+     * @return: date
+     */
     std::string getStartDate() const;
+
+    /**
+     * returns the destiny of the flight
+     * @return: destiny
+     */
     std::string getDestiny() const;
+
+    /**
+     * returns the list of passengers
+     * @return: passengers list
+     */
     std::list<int> getPassengersId() const;
+
+    /**
+     * adds a passenger to the list of the passengers
+     * @param: Passenger p
+     */
     void addPassenger(const Passenger &p);
+
+    /**
+     * overloading of operator <
+     * @param f
+     * @return a boolean
+     **/
     bool operator <(Flight &f);
+
+    /**
+     * overloading of operator ==
+     * @param f
+     * @return a boolean
+     **/
     bool operator ==(const Flight &f) const;
 };
 
