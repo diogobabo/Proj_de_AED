@@ -46,13 +46,11 @@ private:
     * display the menu
     */
     void showMenu();
-
-    /**
-     * displays the menu
-     */
-
 public:
 
+    /**
+     * functions that outputs the menu and lets the user choose which type of login he wants
+     */
     void iniciate();
 
 

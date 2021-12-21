@@ -350,7 +350,7 @@ void AirplaneCompany::airplanesInfo() {
     int x;
     std::cout << "1) CHECK FLIGHTS OF AN AIRPLANE" << std::endl<< "2) CHECK A FLIGHT OF AN AIRPLANE" << std::endl << "3) SHOW ALL FLIGHTS" << std::endl;
     std::cin >> x;
-    while(!std::cin || x > 2) {
+    while(!std::cin || x > 3) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input, please try again: " << std::endl;

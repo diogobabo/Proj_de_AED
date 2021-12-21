@@ -61,7 +61,7 @@ public:
     /**
      * overloading of operator ==
      * @param p
-     * @return a boolean
+     * @return bool if they are equal or not
      **/
 
     bool operator==(const Airport &p)const;

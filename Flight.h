@@ -96,18 +96,27 @@ public:
     /**
      * overloading of operator <
      * @param f
-     * @return a boolean
+     * @return: a boolean
      **/
     bool operator <(Flight &f);
 
     /**
      * overloading of operator ==
-     * @param f
-     * @return a boolean
+     * @param: f
+     * @return: bool if they are equal or not
      **/
     bool operator ==(const Flight &f) const;
 
+    /**
+     * adds a luggage to the stack of luggages'
+     * @param: luggage
+     */
     void addL(InternalLuggage luggage);
+
+    /**
+     * functions that returns a list of stacks of luggage
+     * @return: order
+     */
     std::list<std::stack<InternalLuggage>> getl();
 };
 

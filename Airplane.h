@@ -108,7 +108,7 @@ public:
     /**
      * overloading of operator <<
      * @param ostream f
-     * @param Airplane p
+     * @param a
      * @return a ostream
      **/
     friend std::ostream& operator<<(std::ostream &f, const Airplane &a);

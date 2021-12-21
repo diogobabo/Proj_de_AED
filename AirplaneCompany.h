@@ -24,7 +24,12 @@ private:
     std::fstream clientsfile;
     std::vector<Flight> allFlights;
 
-
+    /**
+        * iterates through the string s and divides it when it finds the char c, and adds it to the vector v
+        * @param s
+        * @param v
+        * @param c
+     **/
     void SplitString(std::string s, std::vector<std::string> &v,char c);
 
     /**
@@ -144,8 +149,6 @@ private:
         **/
     void buyTicket();
 
-    bool canBuyTicket(Airplane &a1);
-
     /**
         * writes the baggage and its details to its file
         * @param baggageTXT(file of the baggage)
@@ -197,6 +200,10 @@ public:
         * gives the different options for the AIRPLANE COMPANY submenu
         **/
     void getOptions();
+
+    /**
+        * does the logistics for the luggage for a flight
+        **/
     void luggageLogistic();
 };
 
